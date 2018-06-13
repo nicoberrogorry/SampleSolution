@@ -58,6 +58,11 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Stored Procedures\CreateProfession.sql" />
+    <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>

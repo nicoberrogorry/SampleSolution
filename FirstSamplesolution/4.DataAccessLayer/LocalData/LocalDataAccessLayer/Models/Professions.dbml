@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FirstSampleSolutionDataBase" Class="ProfessionsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=FirstSampleSolutionDataBase;Integrated Security=True" SettingsObjectName="LocalDataAccessLayer.Properties.Settings" SettingsPropertyName="FirstSampleSolutionDataBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.CreateProfession" Method="CreateProfession">
+    <Parameter Name="description" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
