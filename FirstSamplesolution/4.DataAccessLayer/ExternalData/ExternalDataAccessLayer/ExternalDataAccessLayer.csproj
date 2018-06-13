@@ -44,7 +44,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LocalDataAccessLayer\LocalDataAccessLayer.csproj">
+    <ProjectReference Include="..\..\LocalData\LocalDataAccessLayer\LocalDataAccessLayer.csproj">
       <Project>{ac8a38c9-cded-445f-aa38-0db82600823b}</Project>
       <Name>LocalDataAccessLayer</Name>
     </ProjectReference>
