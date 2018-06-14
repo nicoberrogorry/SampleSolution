@@ -11,6 +11,11 @@ namespace WebUserInterface.Controllers.Administration
         // GET: Person
         public ActionResult Index()
         {
+            return View("create");
+        }
+
+        public ActionResult Search()
+        {
             return View("search");
         }
     }
