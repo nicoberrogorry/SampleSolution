@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Persons.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Persons.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Professions.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,6 +69,14 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Models\Persons.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Persons.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Models\Persons.dbml.layout">
+      <DependentUpon>Persons.dbml</DependentUpon>
+    </None>
     <None Include="Models\Professions.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Professions.designer.cs</LastGenOutput>

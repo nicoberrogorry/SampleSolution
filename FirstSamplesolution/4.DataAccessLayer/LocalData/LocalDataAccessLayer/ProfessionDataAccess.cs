@@ -16,7 +16,6 @@ namespace LocalDataAccessLayer
             {
                 dataContext.CreateProfession(p.Description);
             }
-
         }
 
     }

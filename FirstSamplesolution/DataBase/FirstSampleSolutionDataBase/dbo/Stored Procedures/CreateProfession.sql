@@ -7,6 +7,6 @@ CREATE PROCEDURE dbo.CreateProfession
 	 @description varchar
 AS
 BEGIN
-	--insert new profession
+	INSERT dbo.Professions ([Description]) VALUES(@description)
 	return 1
 END
