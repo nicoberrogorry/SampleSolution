@@ -18,5 +18,28 @@ namespace LocalDataAccessLayer
             }
         }
 
+        public List<Profession> GetProfessions()
+        {
+            List<Profession> result = new List<Profession>();
+            Profession profession = null;
+
+            using (var dataContext = new ProfessionsDataContext())
+            {
+                using (var linqResult = dataContext.GetProfession())
+                {
+                    foreach (var row in linqResult)
+                    {
+                        profession = new Profession()
+                        {
+                            ProfessionId = row.ProfessionId,
+                            Description = row.Description
+                        };
+
+                        result.Add(profession);
+                    }
+                }
+            }
+            return result;
+        }
     }
 }

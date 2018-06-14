@@ -4,4 +4,10 @@
     <Parameter Name="description" Type="System.String" DbType="VarChar(1)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.GetProfession" Method="GetProfession">
+    <ElementType Name="GetProfessionResult">
+      <Column Name="ProfessionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

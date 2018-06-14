@@ -4,7 +4,7 @@
 -- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE dbo.CreateProfession
-	 @description varchar
+	 @description  NVARCHAR(512)
 AS
 BEGIN
 	INSERT dbo.Professions ([Description]) VALUES(@description)

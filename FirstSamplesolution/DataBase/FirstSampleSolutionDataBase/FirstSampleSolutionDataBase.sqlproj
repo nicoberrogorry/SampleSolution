@@ -66,6 +66,7 @@
     <Folder Include="dbo\Tables\" />
     <Build Include="dbo\Tables\Professions.sql" />
     <Build Include="dbo\Stored Procedures\CreatePerson.sql" />
+    <Build Include="dbo\Stored Procedures\GetProfessions.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Persons.sql" />

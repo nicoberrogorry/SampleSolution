@@ -1,1 +1,12 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FirstSampleSolutionDataBase" Class="PersonsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=FirstSampleSolutionDataBase;Integrated Security=True" SettingsObjectName="LocalDataAccessLayer.Properties.Settings" SettingsPropertyName="FirstSampleSolutionDataBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.CreatePerson" Method="CreatePerson">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="professionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cellularPhone" Type="System.String" DbType="VarChar(128)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="lastName" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="address" Type="System.String" DbType="NVarChar(512)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

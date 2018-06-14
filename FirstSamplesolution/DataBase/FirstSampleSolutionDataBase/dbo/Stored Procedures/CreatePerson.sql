@@ -1,12 +1,13 @@
 ﻿CREATE PROCEDURE [dbo].[CreatePerson]
-	@name nchar,
-	@profession_id int,
-	@last_name nchar,
-	@address nchar,
-	@cellular_phone nchar
+	@name          NVARCHAR(128),
+	@professionId  INT,
+    @cellularPhone VARCHAR(128),
+	@email		   NVARCHAR(512),
+	@lastName      NVARCHAR(128),
+    @address       NVARCHAR(512)
 AS
 BEGIN
 	INSERT Persons ([Name], [ProfessionId], [CellularPhone], [LastName], [Address])
-	VALUES(@name, @profession_id, @cellular_phone, @last_name, @address)
+	VALUES(@name, @professionId, @cellularPhone, @lastName, @address)
 	RETURN 1
 END

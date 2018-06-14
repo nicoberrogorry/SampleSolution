@@ -68,6 +68,57 @@ namespace LocalDataAccessLayer.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), description);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetProfession")]
+		public ISingleResult<GetProfessionResult> GetProfession()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GetProfessionResult>)(result.ReturnValue));
+		}
+	}
+	
+	public partial class GetProfessionResult
+	{
+		
+		private int _ProfessionId;
+		
+		private string _Description;
+		
+		public GetProfessionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfessionId", DbType="Int NOT NULL")]
+		public int ProfessionId
+		{
+			get
+			{
+				return this._ProfessionId;
+			}
+			set
+			{
+				if ((this._ProfessionId != value))
+				{
+					this._ProfessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(256)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
 	}
 }
 #pragma warning restore 1591

@@ -22,6 +22,7 @@ namespace LocalDataAccessLayer.Models
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="FirstSampleSolutionDataBase")]
 	public partial class PersonsDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,6 +31,12 @@ namespace LocalDataAccessLayer.Models
     #region Extensibility Method Definitions
     partial void OnCreated();
     #endregion
+		
+		public PersonsDataContext() : 
+				base(global::LocalDataAccessLayer.Properties.Settings.Default.FirstSampleSolutionDataBaseConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public PersonsDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +60,13 @@ namespace LocalDataAccessLayer.Models
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CreatePerson")]
+		public int CreatePerson([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> professionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(128)")] string cellularPhone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string lastName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string address)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, professionId, cellularPhone, email, lastName, address);
+			return ((int)(result.ReturnValue));
 		}
 	}
 }
