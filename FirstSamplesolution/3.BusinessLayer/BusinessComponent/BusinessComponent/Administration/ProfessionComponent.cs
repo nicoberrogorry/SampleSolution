@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,9 @@ namespace BusinessComponent.Administration
 {
     class ProfessionComponent
     {
-        public void CreateComponent()
-        { 
+        public void CreateComponent(Profession p)
+        {
+
         }
     }
 }
