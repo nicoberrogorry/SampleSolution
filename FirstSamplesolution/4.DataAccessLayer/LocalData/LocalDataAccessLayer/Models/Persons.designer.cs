@@ -33,7 +33,7 @@ namespace LocalDataAccessLayer.Models
     #endregion
 		
 		public PersonsDataContext() : 
-				base(global::LocalDataAccessLayer.Properties.Settings.Default.FirstSampleSolutionDataBaseConnectionString, mappingSource)
+				base(global::LocalDataAccessLayer.Properties.Settings.Default.FirstSampleSolutionDataBaseConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

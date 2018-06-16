@@ -33,5 +33,16 @@ namespace LocalDataAccessLayer.Properties {
                 return ((string)(this["FirstSampleSolutionDataBaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=FirstSampleSolutionDataBase;Integrated Secu" +
+            "rity=True")]
+        public string FirstSampleSolutionDataBaseConnectionString1 {
+            get {
+                return ((string)(this["FirstSampleSolutionDataBaseConnectionString1"]));
+            }
+        }
     }
 }

@@ -4,14 +4,21 @@
     ViewBag.Title = "CreatePerson";
 }
 
-@using (Html.BeginForm("TriggerCreatePerson", "PersonController",
+@using (Html.BeginForm("CreatePerson", "PersonController",
         new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
         new { @class = "form-horizontal", role = "form" }))
 {
     @Html.EditorFor(@model => @model.Name)
-    @Html.DropDownListFor(@model => @model.ProfessionsList.SelectedProfessionIdViewModel,
-        new SelectList(Model.ProfessionsList.AvailableProfessions, "ProfessionId", "Description",
-        Model.ProfessionsList.SelectedProfessionIdViewModel, "-- Select --"))
-
+    <br />
+    @Html.EditorFor(@model => @model.LastName)
+    <br />
+    @Html.DropDownListFor(@model => @model.ProfessionsList.SelectedProfessionIdViewModel, new SelectList(Model.ProfessionsList.AvailableProfessions, "ProfessionId", "Description", Model.ProfessionsList.SelectedProfessionIdViewModel, "-- Select --"))
+    <br />
+    @Html.EditorFor(@model => @model.Address)
+    <br />
+    @Html.EditorFor(@model => @model.CellularPhone)
+    <br />
+    @Html.EditorFor(@model => @model.Email)
+    <br />
     <input type="submit" value="Confirm" class="button button-3d nomargin" />
 }
