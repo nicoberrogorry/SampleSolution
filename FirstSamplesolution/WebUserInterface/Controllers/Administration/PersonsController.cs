@@ -5,42 +5,44 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebUserInterface.Models;
+using WebUserInterface.Models.CreatePerson;
+using UserInterfaceLogic;
 
 namespace WebUserInterface.Controllers.Administration
 {
     public class PersonsController : Controller
     {
-        // GET: Person
         public ActionResult Index()
         {
-            PersonViewModel model = new PersonViewModel();
-            model.Professions = this.GetProfessions();
+            var professionsController = new ProfessionsController();
 
-            return View("create", model);
+            var createPersonViewModel = new CreatePersonViewModel{
+                ProfessionsList = professionsController.GetProfessionListViewModel(),
+                Name = "Your name",
+                LastName = "Your last name",
+                Address = "Your business address",
+                CellularPhone = "Your business cellular phone",
+                Email = "Your business email"
+            };
+
+            return View("CreatePerson", createPersonViewModel);
         }
 
         [HttpPost]
-        public ActionResult Create(PersonViewModel model)
+        public ActionResult CreatePerson(CreatePersonViewModel createPersonViewModel)
         {
-             model = new PersonViewModel();
-            model.Professions = this.GetProfessions();
+            var personsController = new PersonsController();
+            personsController.CreatePerson(createPersonViewModel);
 
-            return View("create", model);
+
+
+            return null;
         }
+
+
         public ActionResult Search()
         {
             return View("search");
-        }
-
-        public List<Profession> GetProfessions()
-        {
-            List<Profession> result = new List<Profession>()
-            {
-                 new Profession (){ Description="Profession A", ProfessionId=1 },
-                 new Profession (){ Description="Profession B", ProfessionId=2 }
-            };
-
-            return result;
         }
     }
 }

@@ -1,0 +1,17 @@
+﻿@model WebUserInterface.Models.CreatePersonViewModel
+
+@{
+    ViewBag.Title = "Create Person";
+}
+
+@using (Html.BeginForm("TriggerCreatePerson", "CreatePersonController",
+        new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
+        new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.EditorFor(@model => @model.Name)
+    @Html.DropDownListFor(@model => @model.ProfessionsList.SelectedProfessionIdViewModel,
+        new SelectList(Model.ProfessionsList.AvailableProfessions, "ProfessionId", "Description",
+        Model.ProfessionsList.SelectedProfessionIdViewModel, "-- Select --"))
+
+    <input type="submit" value="Confirm" class="button button-3d nomargin" />
+}
