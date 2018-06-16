@@ -1,10 +1,10 @@
 ﻿@model WebUserInterface.Models.CreatePersonViewModel
 
 @{
-    ViewBag.Title = "Create Person";
+    ViewBag.Title = "CreatePerson";
 }
 
-@using (Html.BeginForm("TriggerCreatePerson", "CreatePersonController",
+@using (Html.BeginForm("TriggerCreatePerson", "PersonController",
         new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
         new { @class = "form-horizontal", role = "form" }))
 {

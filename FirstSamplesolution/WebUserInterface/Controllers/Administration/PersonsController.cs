@@ -36,7 +36,7 @@ namespace WebUserInterface.Controllers.Administration
 
 
 
-            return null;
+            return View("CreatePerson", createPersonViewModel); ;
         }
 
 
