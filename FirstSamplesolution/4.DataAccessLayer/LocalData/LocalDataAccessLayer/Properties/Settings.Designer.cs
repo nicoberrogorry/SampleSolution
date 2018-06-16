@@ -26,8 +26,8 @@ namespace LocalDataAccessLayer.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=FirstSampleSolutionDataBase;Integrated Security=Tru" +
-            "e")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=FirstSampleSolutionDataBase;Integrated Secu" +
+            "rity=False;Persist Security Info=True;uid=FirstSampleSolution;pwd=Password01")]
         public string FirstSampleSolutionDataBaseConnectionString {
             get {
                 return ((string)(this["FirstSampleSolutionDataBaseConnectionString"]));
