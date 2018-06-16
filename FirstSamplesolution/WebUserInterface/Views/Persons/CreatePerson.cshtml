@@ -12,7 +12,7 @@
     <br />
     @Html.EditorFor(@model => @model.LastName)
     <br />
-    @Html.DropDownListFor(@model => @model.ProfessionsList.SelectedProfessionIdViewModel, new SelectList(Model.ProfessionsList.AvailableProfessions, "ProfessionId", "Description", Model.ProfessionsList.SelectedProfessionIdViewModel, "-- Select --"))
+    @Html.DropDownListFor(@model => @model.ProfessionsList.SelectedProfessionIdViewModel, new SelectList(Model.ProfessionsList.AvailableProfessions, "ProfessionId", "Description", Model.ProfessionsList.SelectedProfessionIdViewModel))
     <br />
     @Html.EditorFor(@model => @model.Address)
     <br />

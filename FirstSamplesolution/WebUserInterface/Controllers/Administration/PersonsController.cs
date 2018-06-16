@@ -31,10 +31,18 @@ namespace WebUserInterface.Controllers.Administration
         [HttpPost]
         public ActionResult CreatePerson(CreatePersonViewModel createPersonViewModel)
         {
-            var personsController = new PersonsController();
-            personsController.CreatePerson(createPersonViewModel);
+            var personUIProcess = new PersonUIProcess();
+            var person = new Person
+            {
+                Name = createPersonViewModel.Name,
+                LastName = createPersonViewModel.LastName,
+                ProfessionId = createPersonViewModel.ProfessionsList.SelectedProfessionIdViewModel,
+                Address = createPersonViewModel.Address,
+                CellularPhone = createPersonViewModel.CellularPhone,
+                Email = createPersonViewModel.Email
+            };
 
-
+            personUIProcess.CreatePerson(person);
 
             return View("CreatePerson", createPersonViewModel); ;
         }
