@@ -67,8 +67,13 @@
     <Build Include="dbo\Tables\Professions.sql" />
     <Build Include="dbo\Stored Procedures\CreatePerson.sql" />
     <Build Include="dbo\Stored Procedures\GetProfessions.sql" />
+    <Build Include="dbo\Stored Procedures\FindPerson.sql" />
+    <Build Include="dbo\Stored Procedures\FindProfession.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Persons.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="dbo\InstallDeveloperLoginAndUser.sql" />
   </ItemGroup>
 </Project>

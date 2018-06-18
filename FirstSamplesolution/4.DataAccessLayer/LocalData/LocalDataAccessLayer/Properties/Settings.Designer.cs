@@ -26,8 +26,8 @@ namespace LocalDataAccessLayer.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=FirstSampleSolutionDataBase;Integrated Secu" +
-            "rity=False;Persist Security Info=True;uid=FirstSampleSolution;pwd=Password01")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=FirstSampleSolutionDataBase;Persist Securit" +
+            "y Info=True;User ID=Developer;Password=developer")]
         public string FirstSampleSolutionDataBaseConnectionString {
             get {
                 return ((string)(this["FirstSampleSolutionDataBaseConnectionString"]));
@@ -37,11 +37,11 @@ namespace LocalDataAccessLayer.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=FirstSampleSolutionDataBase;Integrated Secu" +
-            "rity=True")]
-        public string FirstSampleSolutionDataBaseConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=FirstSampleSolutionDataBase;Persist Securit" +
+            "y Info=True;User ID=Developer")]
+        public string FirstSampleSolutionDataBaseConnectionString2 {
             get {
-                return ((string)(this["FirstSampleSolutionDataBaseConnectionString1"]));
+                return ((string)(this["FirstSampleSolutionDataBaseConnectionString2"]));
             }
         }
     }

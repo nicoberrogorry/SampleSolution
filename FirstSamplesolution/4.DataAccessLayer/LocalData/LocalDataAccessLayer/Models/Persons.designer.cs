@@ -33,7 +33,7 @@ namespace LocalDataAccessLayer.Models
     #endregion
 		
 		public PersonsDataContext() : 
-				base(global::LocalDataAccessLayer.Properties.Settings.Default.FirstSampleSolutionDataBaseConnectionString1, mappingSource)
+				base(global::LocalDataAccessLayer.Properties.Settings.Default.FirstSampleSolutionDataBaseConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -67,6 +67,147 @@ namespace LocalDataAccessLayer.Models
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, professionId, cellularPhone, email, lastName, address);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FindPerson")]
+		public ISingleResult<FindPersonResult> FindPerson([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> professionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(128)")] string cellularPhone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string lastName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string address)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, professionId, cellularPhone, email, lastName, address);
+			return ((ISingleResult<FindPersonResult>)(result.ReturnValue));
+		}
+	}
+	
+	public partial class FindPersonResult
+	{
+		
+		private int _PersonId;
+		
+		private string _Name;
+		
+		private int _ProfessionId;
+		
+		private string _CellularPhone;
+		
+		private string _Email;
+		
+		private string _LastName;
+		
+		private string _Address;
+		
+		public FindPersonResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonId", DbType="Int NOT NULL")]
+		public int PersonId
+		{
+			get
+			{
+				return this._PersonId;
+			}
+			set
+			{
+				if ((this._PersonId != value))
+				{
+					this._PersonId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfessionId", DbType="Int NOT NULL")]
+		public int ProfessionId
+		{
+			get
+			{
+				return this._ProfessionId;
+			}
+			set
+			{
+				if ((this._ProfessionId != value))
+				{
+					this._ProfessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CellularPhone", DbType="VarChar(128) NOT NULL", CanBeNull=false)]
+		public string CellularPhone
+		{
+			get
+			{
+				return this._CellularPhone;
+			}
+			set
+			{
+				if ((this._CellularPhone != value))
+				{
+					this._CellularPhone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string LastName
+		{
+			get
+			{
+				return this._LastName;
+			}
+			set
+			{
+				if ((this._LastName != value))
+				{
+					this._LastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
 		}
 	}
 }

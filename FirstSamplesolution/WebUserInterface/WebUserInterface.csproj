@@ -161,15 +161,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\Administration\PersonsController.cs" />
-    <Compile Include="Controllers\Administration\ProfessionsController.cs" />
+    <Compile Include="Controllers\Administration\Persons\PersonsController.cs" />
+    <Compile Include="Controllers\Administration\Persons\ProfessionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CreatePersonViewModel.cs" />
-    <Compile Include="Models\CreatePerson\ProfessionListViewModel.cs" />
-    <Compile Include="Models\CreatePerson\ProfessionViewModel.cs" />
+    <Compile Include="Models\Administration\PersonFinderViewModel.cs" />
+    <Compile Include="Models\Administration\CreatePersonViewModel.cs" />
+    <Compile Include="Models\Administration\Persons\PersonViewModel.cs" />
+    <Compile Include="Models\Administration\Persons\ProfessionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -211,8 +212,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Persons\Search.cshtml" />
-    <Content Include="Views\Persons\CreatePerson.cshtml" />
+    <Content Include="Views\Administration\PersonFinder.cshtml" />
+    <Content Include="Views\Administration\CreatePerson.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

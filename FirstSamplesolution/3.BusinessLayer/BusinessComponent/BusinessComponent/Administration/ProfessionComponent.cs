@@ -18,13 +18,20 @@ namespace BusinessComponent.Administration
 
         public List<Profession> GetProfessions()
         {
-            List<Profession> result = null;
+            List<Profession> allProfessions = null;
 
-            ProfessionDataAccess professionDataAccess = new ProfessionDataAccess();
+            var professionDataAccess = new ProfessionDataAccess();
 
-            result = professionDataAccess.GetProfessions();
+            allProfessions = professionDataAccess.GetProfessions();
 
-            return result;
+            return allProfessions;
+        }
+
+        public List<Profession> FindProfessions(string professionDescription)
+        {
+            var professionsDataAccess = new ProfessionDataAccess();
+            var matchedProfessions = professionsDataAccess.FindProfession(professionDescription);
+            return matchedProfessions;
         }
     }
 }

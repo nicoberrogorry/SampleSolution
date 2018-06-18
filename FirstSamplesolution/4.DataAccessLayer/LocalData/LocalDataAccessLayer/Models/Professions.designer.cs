@@ -33,7 +33,7 @@ namespace LocalDataAccessLayer.Models
     #endregion
 		
 		public ProfessionsDataContext() : 
-				base(global::LocalDataAccessLayer.Properties.Settings.Default.FirstSampleSolutionDataBaseConnectionString1, mappingSource)
+				base(global::LocalDataAccessLayer.Properties.Settings.Default.FirstSampleSolutionDataBaseConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -62,11 +62,11 @@ namespace LocalDataAccessLayer.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CreateProfession")]
-		public int CreateProfession([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string description)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FindProfession")]
+		public ISingleResult<FindProfessionResult> FindProfession([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string description)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), description);
-			return ((int)(result.ReturnValue));
+			return ((ISingleResult<FindProfessionResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetProfession")]
@@ -74,6 +74,57 @@ namespace LocalDataAccessLayer.Models
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<GetProfessionResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CreateProfession")]
+		public int CreateProfession([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string description)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), description);
+			return ((int)(result.ReturnValue));
+		}
+	}
+	
+	public partial class FindProfessionResult
+	{
+		
+		private int _ProfessionId;
+		
+		private string _Description;
+		
+		public FindProfessionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfessionId", DbType="Int NOT NULL")]
+		public int ProfessionId
+		{
+			get
+			{
+				return this._ProfessionId;
+			}
+			set
+			{
+				if ((this._ProfessionId != value))
+				{
+					this._ProfessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(512)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
 		}
 	}
 	

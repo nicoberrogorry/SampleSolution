@@ -66,7 +66,15 @@
       <Name>BusinessEntities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="dbo\Stored Procedures\CreatePerson.sql" />
+    <Content Include="dbo\Stored Procedures\CreateProfession.sql" />
+    <Content Include="dbo\Stored Procedures\FindPerson.sql" />
+    <Content Include="dbo\Stored Procedures\FindProfession.sql" />
+    <Content Include="dbo\Stored Procedures\GetProfessions.sql" />
+    <Content Include="dbo\Tables\Persons.sql" />
+    <Content Include="dbo\Tables\Professions.sql" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Models\Persons.dbml">

@@ -15,5 +15,14 @@ namespace BusinessComponent.Administration
             var personDataAccess = new PersonDataAccess();
             personDataAccess.CreatePerson(person);
         }
+
+        public static List<Person> FindPerson(Person person)
+        {
+            var personDataAccess = new PersonDataAccess();
+
+            List<Person> matchedPersons = personDataAccess.FindPerson(person);
+
+            return matchedPersons;
+        }
     }
 }

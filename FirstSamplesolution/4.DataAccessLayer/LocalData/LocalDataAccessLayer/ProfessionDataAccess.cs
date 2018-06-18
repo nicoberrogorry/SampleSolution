@@ -20,7 +20,7 @@ namespace LocalDataAccessLayer
 
         public List<Profession> GetProfessions()
         {
-            List<Profession> result = new List<Profession>();
+            List<Profession> allProfessions = new List<Profession>();
             Profession profession = null;
 
             using (var dataContext = new ProfessionsDataContext())
@@ -35,11 +35,31 @@ namespace LocalDataAccessLayer
                             Description = row.Description
                         };
 
-                        result.Add(profession);
+                        allProfessions.Add(profession);
                     }
                 }
             }
-            return result;
+            return allProfessions;
+        }
+
+        public List<Profession> FindProfession(string descriptionFragment)
+        {
+            var matchedProfessions = new List<Profession>();
+
+            using (var professionsDataContext = new ProfessionsDataContext())
+            {
+                var matchedProfessionsResult = professionsDataContext.FindProfession(descriptionFragment);
+                foreach(var matchResult in matchedProfessionsResult)
+                {
+                    matchedProfessions.Add(new Profession
+                    {
+                        ProfessionId = matchResult.ProfessionId,
+                        Description = matchResult.Description
+                    });
+                }
+            }
+
+            return matchedProfessions;
         }
     }
 }

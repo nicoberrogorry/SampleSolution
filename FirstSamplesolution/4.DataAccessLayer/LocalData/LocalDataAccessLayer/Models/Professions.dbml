@@ -1,13 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FirstSampleSolutionDataBase" Class="ProfessionsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=FirstSampleSolutionDataBase;Integrated Security=True" SettingsObjectName="LocalDataAccessLayer.Properties.Settings" SettingsPropertyName="FirstSampleSolutionDataBaseConnectionString1" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.CreateProfession" Method="CreateProfession">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=FirstSampleSolutionDataBase;Persist Security Info=True;User ID=Developer" SettingsObjectName="LocalDataAccessLayer.Properties.Settings" SettingsPropertyName="FirstSampleSolutionDataBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.FindProfession" Method="FindProfession">
     <Parameter Name="description" Type="System.String" DbType="NVarChar(512)" />
-    <Return Type="System.Int32" />
+    <ElementType Name="FindProfessionResult">
+      <Column Name="ProfessionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+    </ElementType>
   </Function>
   <Function Name="dbo.GetProfession" Method="GetProfession">
     <ElementType Name="GetProfessionResult">
       <Column Name="ProfessionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.CreateProfession" Method="CreateProfession">
+    <Parameter Name="description" Type="System.String" DbType="NVarChar(512)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>
