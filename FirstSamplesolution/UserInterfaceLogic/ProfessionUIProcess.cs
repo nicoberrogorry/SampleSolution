@@ -17,9 +17,9 @@ namespace UserInterfaceLogic
             
         public List<Profession> GetProfessions()
         {
-            var professionComponent = new ProfessionComponent();
-            var allProfessions = professionComponent.GetProfessions();
-            return allProfessions;
+            //var professionComponent = new ProfessionComponent();
+            //var allProfessions = professionComponent.GetProfessions();
+            return null;
         }
 
         public List<Profession> FindProfessions(string professionDescription)
