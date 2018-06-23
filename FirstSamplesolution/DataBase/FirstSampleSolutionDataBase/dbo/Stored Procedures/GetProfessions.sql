@@ -1,7 +1,0 @@
-﻿CREATE PROCEDURE [GetProfession]
-AS
-BEGIN
-	SELECT *
-	FROM [Professions]
-	RETURN
-END

@@ -1,10 +1,6 @@
 ﻿using BusinessEntities;
 using LocalDataAccessLayer.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocalDataAccessLayer
 {
@@ -18,48 +14,28 @@ namespace LocalDataAccessLayer
             }
         }
 
-        public List<Profession> GetProfessions()
+        public List<Profession> GetAllProfessionsSummary()
         {
-            List<Profession> allProfessions = new List<Profession>();
-            Profession profession = null;
-
-            using (var dataContext = new ProfessionsDataContext())
-            {
-                using (var linqResult = dataContext.GetProfession())
-                {
-                    foreach (var row in linqResult)
-                    {
-                        profession = new Profession()
-                        {
-                            ProfessionId = row.ProfessionId,
-                            Description = row.Description
-                        };
-
-                        allProfessions.Add(profession);
-                    }
-                }
-            }
-            return allProfessions;
-        }
-
-        public List<Profession> FindProfession(string descriptionFragment)
-        {
-            var matchedProfessions = new List<Profession>();
+            List<Profession> result = new List<Profession>();
 
             using (var professionsDataContext = new ProfessionsDataContext())
             {
-                var matchedProfessionsResult = professionsDataContext.FindProfession(descriptionFragment);
-                foreach(var matchResult in matchedProfessionsResult)
+                using (var professionsSummarise = professionsDataContext.GetAllProfessionsSummary())
                 {
-                    matchedProfessions.Add(new Profession
+                    foreach (var professionSummary in professionsSummarise)
                     {
-                        ProfessionId = matchResult.ProfessionId,
-                        Description = matchResult.Description
-                    });
+                        Profession profession = new Profession()
+                        {
+                            ProfessionId = professionSummary.ProfessionId,
+                            Description = professionSummary.Description
+                        };
+
+                        result.Add(profession);
+                    }
                 }
             }
 
-            return matchedProfessions;
+            return result;
         }
     }
 }

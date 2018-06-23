@@ -1,10 +1,6 @@
 ﻿using BusinessEntities;
 using LocalDataAccessLayer;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessComponent.Administration
 {
@@ -16,22 +12,15 @@ namespace BusinessComponent.Administration
             professionDataAccess.CreateProfession(profession);
         }
 
-        public List<Profession> GetProfessions()
+        public List<Profession> GetProfessionsSummary()
         {
-            List<Profession> allProfessions = null;
+            List<Profession> result = null;
 
             var professionDataAccess = new ProfessionDataAccess();
 
-            allProfessions = professionDataAccess.GetProfessions();
+            result = professionDataAccess.GetAllProfessionsSummary();
 
-            return allProfessions;
-        }
-
-        public List<Profession> FindProfessions(string professionDescription)
-        {
-            var professionsDataAccess = new ProfessionDataAccess();
-            var matchedProfessions = professionsDataAccess.FindProfession(professionDescription);
-            return matchedProfessions;
+            return result;
         }
     }
 }

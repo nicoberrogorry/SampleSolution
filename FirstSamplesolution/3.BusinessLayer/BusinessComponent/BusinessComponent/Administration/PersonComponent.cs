@@ -1,10 +1,6 @@
 ﻿using BusinessEntities;
 using LocalDataAccessLayer;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessComponent.Administration
 {
@@ -12,17 +8,19 @@ namespace BusinessComponent.Administration
     {
         public void CreatePerson(Person person)
         {
-            var personDataAccess = new PersonDataAccess();
+            PersonDataAccess personDataAccess = new PersonDataAccess();
             personDataAccess.CreatePerson(person);
         }
 
-        public static List<Person> FindPerson(Person person)
+        public static List<Person> FindPersonsSummary(FindPersonsFilter findPersonFilter)
         {
-            var personDataAccess = new PersonDataAccess();
+            List<Person> result = null;
 
-            List<Person> matchedPersons = personDataAccess.FindPerson(person);
+            PersonDataAccess personDataAccess = new PersonDataAccess();
 
-            return matchedPersons;
+            result = personDataAccess.FindPersonsSummary(findPersonFilter);
+
+            return result;
         }
     }
 }

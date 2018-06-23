@@ -1,0 +1,96 @@
+﻿@model FMHWebApi.Models.PersonFinderViewModel
+
+<h1>Person finder</h1>
+
+@{
+    ViewBag.Title = "Person Finder";
+}
+
+@using (Html.BeginForm("PersonFinder", "Persons",
+        new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
+        new { @class = "form-horizontal", role = "form" }))
+{
+    <p>
+        Name <br />
+        @Html.EditorFor(@model => @model.PersonDetails.Name)
+    </p>
+
+    <p>
+        Last Name <br />
+        @Html.EditorFor(@model => @model.PersonDetails.LastName)
+    </p>
+
+    <p>
+    <p>
+        Profession <br />
+        @Html.DropDownListFor(@model => @model.PersonDetails.ProfessionSummary.ProfessionId,
+    new SelectList(Model.ProfessionsList, "ProfessionId", "Description"), "Select profession")
+    </p>
+    </p>
+
+    <p>
+        Address <br />
+        @Html.EditorFor(@model => @model.PersonDetails.Address)
+    </p>
+
+    <p>
+        Cellular Phone <br />
+        @Html.EditorFor(@model => @model.PersonDetails.CellularPhone)
+    </p>
+
+    <p>
+        Email <br />
+        @Html.EditorFor(@model => @model.PersonDetails.Email)
+    </p>
+
+    <p>
+        <input type="submit" value="Find" class="button button-3d nomargin" />
+    </p>
+}
+
+@if (Model.SearchResults != null)
+{
+    if (Model.SearchResults.Count() == 0)
+    {
+        <h4>No persons found!</h4>
+    }
+    else
+    {
+        <h4>Persons found:</h4>
+        <table border="1">
+            <tr>
+                <th style="display:none">Hidden PersonId</th>
+                <th style="padding-left: 1em; padding-right: 1em">Name</th>
+                <th style="padding-left: 1em; padding-right: 1em">Last Name</th>
+                <th style="padding-left: 1em; padding-right: 1em">Profession Description</th>
+                <th style="padding-left: 1em; padding-right: 1em">Go to details</th>
+            </tr>
+            @foreach (var match in Model.SearchResults)
+            {
+                <tr data-PersonId="">
+                    <td style="display:none">
+                        @Html.HiddenFor(@model => model.PersonDetails.PersonId)
+                    </td>
+                    <td style="padding-left: 1em;">
+                        <p>@match.Name</p>
+                    </td>
+                    <td style="padding-left: 1em;">
+                        <p>@match.LastName</p>
+                    </td>
+                    <td style="padding-left: 1em;">
+                        <p>@match.ProfessionSummary.Description</p>
+                    </td>
+                    <td style="padding-left: 0px; padding-right: 0px">
+                        @using (Html.BeginForm("PersonFinderDetails", "Persons",
+                                new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
+                                new { @class = "form-horizontal", role = "form" }))
+                        {
+                            <input type="submit" value="->" style="width: 100%" />
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+}

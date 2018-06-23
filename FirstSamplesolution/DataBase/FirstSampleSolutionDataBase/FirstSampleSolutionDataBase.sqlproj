@@ -59,19 +59,22 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Stored Procedures\Persons" />
+    <Folder Include="dbo\Stored Procedures\Professions" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Stored Procedures\CreateProfession.sql" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Build Include="dbo\Tables\Professions.sql" />
-    <Build Include="dbo\Stored Procedures\CreatePerson.sql" />
-    <Build Include="dbo\Stored Procedures\GetProfessions.sql" />
-    <Build Include="dbo\Stored Procedures\FindPerson.sql" />
-    <Build Include="dbo\Stored Procedures\FindProfession.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Persons.sql" />
+    <Build Include="dbo\Stored Procedures\Persons\CreatePerson.sql" />
+    <Build Include="dbo\Stored Procedures\Persons\FindPersonsSummary.sql" />
+    <Build Include="dbo\Stored Procedures\Persons\GetPersonDetails.sql" />
+    <Build Include="dbo\Stored Procedures\Professions\CreateProfession.sql" />
+    <Build Include="dbo\Stored Procedures\Professions\GetAllProfessionsSummary.sql" />
+    <PostDeploy Include="dbo\InsertSampleData.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="dbo\InstallDeveloperLoginAndUser.sql" />

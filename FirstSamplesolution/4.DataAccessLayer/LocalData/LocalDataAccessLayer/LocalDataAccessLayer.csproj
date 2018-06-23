@@ -61,12 +61,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\3.BusinessLayer\BusinessEntities\BusinessEntities\BusinessEntities.csproj">
-      <Project>{08ece7d7-4170-42c5-b1ec-57a8b505d200}</Project>
-      <Name>BusinessEntities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="dbo\Stored Procedures\CreatePerson.sql" />
     <Content Include="dbo\Stored Procedures\CreateProfession.sql" />
     <Content Include="dbo\Stored Procedures\FindPerson.sql" />
@@ -100,6 +94,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\3.BusinessLayer\BusinessEntities\BusinessEntities\BusinessEntities.csproj">
+      <Project>{08ece7d7-4170-42c5-b1ec-57a8b505d200}</Project>
+      <Name>BusinessEntities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

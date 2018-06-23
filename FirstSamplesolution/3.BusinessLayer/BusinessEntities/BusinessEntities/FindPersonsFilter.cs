@@ -1,10 +1,8 @@
 ﻿namespace BusinessEntities
 {
-    public class Person
+    public class FindPersonsFilter
     {
-        public int? PersonId { get; set; }
-
-        public Profession Profession { get; set; }
+        public int? ProfessionId { get; set; }
 
         public string Name { get; set; }
 

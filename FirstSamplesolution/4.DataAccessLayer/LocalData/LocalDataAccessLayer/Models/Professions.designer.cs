@@ -22,7 +22,7 @@ namespace LocalDataAccessLayer.Models
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="FirstSampleSolutionDataBase")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="FMHDataBase")]
 	public partial class ProfessionsDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,7 +33,7 @@ namespace LocalDataAccessLayer.Models
     #endregion
 		
 		public ProfessionsDataContext() : 
-				base(global::LocalDataAccessLayer.Properties.Settings.Default.FirstSampleSolutionDataBaseConnectionString, mappingSource)
+				base(global::LocalDataAccessLayer.Properties.Settings.Default.FMHDataBaseConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -62,18 +62,11 @@ namespace LocalDataAccessLayer.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FindProfession")]
-		public ISingleResult<FindProfessionResult> FindProfession([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string description)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), description);
-			return ((ISingleResult<FindProfessionResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetProfession")]
-		public ISingleResult<GetProfessionResult> GetProfession()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetAllProfessionsSummary")]
+		public ISingleResult<GetAllProfessionsSummaryResult> GetAllProfessionsSummary()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<GetProfessionResult>)(result.ReturnValue));
+			return ((ISingleResult<GetAllProfessionsSummaryResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CreateProfession")]
@@ -84,58 +77,14 @@ namespace LocalDataAccessLayer.Models
 		}
 	}
 	
-	public partial class FindProfessionResult
+	public partial class GetAllProfessionsSummaryResult
 	{
 		
 		private int _ProfessionId;
 		
 		private string _Description;
 		
-		public FindProfessionResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfessionId", DbType="Int NOT NULL")]
-		public int ProfessionId
-		{
-			get
-			{
-				return this._ProfessionId;
-			}
-			set
-			{
-				if ((this._ProfessionId != value))
-				{
-					this._ProfessionId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(512)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this._Description = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetProfessionResult
-	{
-		
-		private int _ProfessionId;
-		
-		private string _Description;
-		
-		public GetProfessionResult()
+		public GetAllProfessionsSummaryResult()
 		{
 		}
 		

@@ -44,5 +44,16 @@ namespace LocalDataAccessLayer.Properties {
                 return ((string)(this["FirstSampleSolutionDataBaseConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=FMHDataBase;Persist Security Info=True;User" +
+            " ID=Developer;Password=developer")]
+        public string FMHDataBaseConnectionString {
+            get {
+                return ((string)(this["FMHDataBaseConnectionString"]));
+            }
+        }
     }
 }

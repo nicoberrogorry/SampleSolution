@@ -1,11 +1,8 @@
 ﻿using BusinessEntities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
 using LocalDataAccessLayer.Models;
+using System.Linq;
+using System;
 
 namespace LocalDataAccessLayer
 {
@@ -15,34 +12,81 @@ namespace LocalDataAccessLayer
         {
             using (var personsDataContext = new PersonsDataContext())
             {
-                personsDataContext.CreatePerson(person.Name, person.ProfessionId,
+                personsDataContext.CreatePerson(person.Name, person.Profession.ProfessionId,
                     person.CellularPhone, person.Email, person.LastName, person.Address);
             }
         }
 
-        public List<Person> FindPerson(Person person)
+        public List<Person> FindPersonsSummary(FindPersonsFilter personFilter)
         {
-            var matchedPersons = new List<Person>();
+            List<Person> result = new List<Person>();
+
             using (var personsDataContext = new PersonsDataContext())
             {
-                using (var allMatches = personsDataContext.FindPerson(person.Name, person.ProfessionId, person.CellularPhone, person.Email, person.LastName, person.Address))
+                using (var foundPersonsSummaries = personsDataContext.FindPersonsSummary(personFilter.Name, personFilter.ProfessionId, personFilter.CellularPhone, personFilter.Email, personFilter.LastName, personFilter.Address))
                 {
-                    foreach (var match in allMatches)
+                    foreach (var personSummary in foundPersonsSummaries)
                     {
-                        matchedPersons.Add(new Person
+                        Profession profession = new Profession
                         {
-                            PersonId = match.PersonId,
-                            Name = match.Name,
-                            ProfessionId = match.ProfessionId,
-                            LastName = match.LastName,
-                            Address = match.Address,
-                            CellularPhone = match.CellularPhone,
-                            Email = match.Email
-                        });
+                            Description = personSummary.ProfessionDescription
+                        };
+
+                        Person person = new Person
+                        {
+                            PersonId = personSummary.PersonId,
+                            Name = personSummary.Name,
+                            LastName = personSummary.LastName,
+                            Profession = profession
+                        };
+
+                        result.Add(person);
                     }
                 }
             }
-            return matchedPersons;
+
+            return result;
+        }
+
+        public Person GetPersonDetails(int personId)
+        {
+            Person result;
+
+            try
+            {
+                using (var personsDataContext = new PersonsDataContext())
+                {
+                    using (var personDetails = personsDataContext.GetPersonDetails(personId))
+                    {
+                        var details = personDetails.First();
+
+                        Profession profession = new Profession()
+                        {
+                            Description = details.Description,
+                        };
+
+                        result = new Person()
+                        {
+                            PersonId = personId,
+                            Name = details.Name,
+                            LastName = details.LastName,
+                            Address = details.Address,
+                            CellularPhone = details.CellularPhone,
+                            Email = details.Email,
+                            Profession = profession
+                        };
+                    }
+                }
+            }
+            catch (InvalidOperationException invalidOperationException)
+            {
+                // This means ProfessionId is either negative or no profession with that id exists
+                // TODO: LOG EXCEPTIONS
+                // TODO: THROW CUSTOM EXCEPTION (Maybe DataAccessLayerException...)
+                throw invalidOperationException;
+            }
+
+            return result;
         }
     }
 }

@@ -11,17 +11,19 @@ namespace Services.Administration
     {
         public void CreateProfession(Profession profession)
         {
-            var professionComponent = new ProfessionComponent();
+            ProfessionComponent professionComponent = new ProfessionComponent();
             professionComponent.CreateProfession(profession);
         }
 
-        public List<Profession> FindProfessions(string professionDescription)
+        public List<Profession> GetProfessionsSummary()
         {
+            List<Profession> result = null;
+
             var professionComponent = new ProfessionComponent();
 
-            var matchedProfessions = professionComponent.FindProfessions(professionDescription);
+            result = professionComponent.GetProfessionsSummary();
 
-            return matchedProfessions;
+            return result;
         }
     }
 }

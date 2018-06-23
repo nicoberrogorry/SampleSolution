@@ -1,5 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FirstSampleSolutionDataBase" Class="PersonsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=FirstSampleSolutionDataBase;Persist Security Info=True;User ID=Developer" SettingsObjectName="LocalDataAccessLayer.Properties.Settings" SettingsPropertyName="FirstSampleSolutionDataBaseConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FMHDataBase" Class="PersonsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=FMHDataBase;Persist Security Info=True;User ID=Developer" SettingsObjectName="LocalDataAccessLayer.Properties.Settings" SettingsPropertyName="FMHDataBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.FindPersonsSummary" Method="FindPersonsSummary">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="professionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cellularPhone" Type="System.String" DbType="VarChar(128)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="lastName" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="address" Type="System.String" DbType="NVarChar(512)" />
+    <ElementType Name="FindPersonsSummaryResult">
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfessionDescription" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.CreatePerson" Method="CreatePerson">
     <Parameter Name="name" Type="System.String" DbType="NVarChar(128)" />
     <Parameter Name="professionId" Type="System.Int32" DbType="Int" />
@@ -9,20 +23,14 @@
     <Parameter Name="address" Type="System.String" DbType="NVarChar(512)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.FindPerson" Method="FindPerson">
-    <Parameter Name="name" Type="System.String" DbType="NVarChar(128)" />
-    <Parameter Name="professionId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="cellularPhone" Type="System.String" DbType="VarChar(128)" />
-    <Parameter Name="email" Type="System.String" DbType="NVarChar(512)" />
-    <Parameter Name="lastName" Type="System.String" DbType="NVarChar(128)" />
-    <Parameter Name="address" Type="System.String" DbType="NVarChar(512)" />
-    <ElementType Name="FindPersonResult">
-      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+  <Function Name="dbo.GetPersonDetails" Method="GetPersonDetails">
+    <Parameter Name="PersonId" Parameter="personId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetPersonDetailsResult">
       <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
-      <Column Name="ProfessionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
       <Column Name="CellularPhone" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
-      <Column Name="LastName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
       <Column Name="Address" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
