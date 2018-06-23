@@ -17,7 +17,7 @@
     <AssemblyName>WebUserInterface</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -232,13 +232,13 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\2.0UIProcess\UIProcess.csproj">
+      <Project>{1AC72C5A-DF32-419F-A6DE-4166C0175949}</Project>
+      <Name>UIProcess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\3.BusinessLayer\BusinessEntities\BusinessEntities\BusinessEntities.csproj">
       <Project>{08ECE7D7-4170-42C5-B1EC-57A8B505D200}</Project>
       <Name>BusinessEntities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UserInterfaceLogic\UserInterfaceLogic.csproj">
-      <Project>{aeb90f13-63da-467d-bf64-437fc0a77bbf}</Project>
-      <Name>UserInterfaceLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

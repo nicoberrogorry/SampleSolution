@@ -3,7 +3,7 @@ using BusinessEntities;
 using System;
 using System.Collections.Generic;
 
-namespace UserInterfaceLogic
+namespace UIProcess
 {
     public class PersonUIProcess
     {
