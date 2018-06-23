@@ -9,70 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace UIProcess.ProfessionsServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Profession", Namespace="http://schemas.datacontract.org/2004/07/BusinessEntities")]
-    [System.SerializableAttribute()]
-    public partial class Profession : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ProfessionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProfessionId {
-            get {
-                return this.ProfessionIdField;
-            }
-            set {
-                if ((this.ProfessionIdField.Equals(value) != true)) {
-                    this.ProfessionIdField = value;
-                    this.RaisePropertyChanged("ProfessionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProfessionsServiceReference.IProfessionsService")]
@@ -97,12 +34,12 @@ namespace UIProcess.ProfessionsServiceReference {
     public partial class CreateProfessionRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public UIProcess.ProfessionsServiceReference.Profession profession;
+        public BusinessEntities.Profession profession;
         
         public CreateProfessionRequest() {
         }
         
-        public CreateProfessionRequest(UIProcess.ProfessionsServiceReference.Profession profession) {
+        public CreateProfessionRequest(BusinessEntities.Profession profession) {
             this.profession = profession;
         }
     }
@@ -138,12 +75,12 @@ namespace UIProcess.ProfessionsServiceReference {
     public partial class FindProfessionsResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public UIProcess.ProfessionsServiceReference.Profession[] FindProfessionsResult;
+        public System.Collections.Generic.List<BusinessEntities.Profession> FindProfessionsResult;
         
         public FindProfessionsResponse() {
         }
         
-        public FindProfessionsResponse(UIProcess.ProfessionsServiceReference.Profession[] FindProfessionsResult) {
+        public FindProfessionsResponse(System.Collections.Generic.List<BusinessEntities.Profession> FindProfessionsResult) {
             this.FindProfessionsResult = FindProfessionsResult;
         }
     }

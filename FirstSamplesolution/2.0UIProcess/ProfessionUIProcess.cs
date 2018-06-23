@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessEntities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,16 +11,30 @@ namespace UserInterfaceLogic
     {
         public void CreateProfession(Profession profession)
         {
-            //var professionComponent = new ProfessionComponent();
-            //professionComponent.CreateProfession(profession);
+            ProfessionsServiceClient client = new ProfessionsServiceClient("BasicHttpBinding_IProfessionsService");
+
+            CreateProfessionRequest request = new CreateProfessionRequest()
+            {
+                 profession= profession
+            };
+
+            client.CreateProfession(request);
         }
             
         public List<Profession> FindProfessions(string professionDescription)
         {
-        //    var professionComponent = new ProfessionComponent();
-        //    var matchedProfessions = professionComponent.FindProfessions(professionDescription);
+            ProfessionsServiceClient client = new ProfessionsServiceClient("BasicHttpBinding_IProfessionsService");
 
-           return null; // matchedProfessions;
+            //    var professionComponent = new ProfessionComponent();
+            //    var matchedProfessions = professionComponent.FindProfessions(professionDescription);
+            FindProfessionsRequest request = new FindProfessionsRequest()
+            {
+                 professionDescription= professionDescription
+            };
+
+            FindProfessionsResponse response= client.FindProfessions(request);
+
+            return response.FindProfessionsResult;
         }
     }
 }
