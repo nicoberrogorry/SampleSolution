@@ -1,4 +1,4 @@
-﻿@model FMHWebApi.Models.PersonFinderViewModel
+﻿@model WebUserInterface.Models.Administration.PersonFinderViewModel
 
 <h1>Person finder</h1>
 
@@ -6,7 +6,7 @@
     ViewBag.Title = "Person Finder";
 }
 
-@using (Html.BeginForm("PersonFinder", "Persons",
+@using (Html.BeginForm("PersonFinder", "Administration",
         new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
         new { @class = "form-horizontal", role = "form" }))
 {
@@ -81,7 +81,7 @@
                         <p>@match.ProfessionSummary.Description</p>
                     </td>
                     <td style="padding-left: 0px; padding-right: 0px">
-                        @using (Html.BeginForm("PersonFinderDetails", "Persons",
+                        @using (Html.BeginForm("PersonFinderDetails", "Administration",
                                 new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
                                 new { @class = "form-horizontal", role = "form" }))
                         {

@@ -214,12 +214,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Administration\PersonFinder.cshtml" />
     <Content Include="Views\Administration\CreatePerson.cshtml" />
     <Content Include="web.config" />
+    <Content Include="Views\Administration\PersonFinderDetails.cshtml" />
+    <Content Include="Views\Administration\CreatePersonSuccess.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
