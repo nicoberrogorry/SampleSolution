@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using BusinessComponent.Administration;
 using BusinessEntities;
+using Services.Administration.Interfaces;
 
 namespace Services.Administration
 {

@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.Administration
+namespace Services.Administration.Interfaces
 {
     [ServiceContract]
     public interface IProfessionsService

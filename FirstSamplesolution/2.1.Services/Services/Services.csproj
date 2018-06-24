@@ -61,22 +61,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Administration\Contracts\IPersonsService.cs" />
-    <Compile Include="Administration\Contracts\IProfessionsService.cs" />
+    <Compile Include="Administration\Interfaces\IPersonsService.cs" />
+    <Compile Include="Administration\Interfaces\IProfessionsService.cs" />
     <Compile Include="Administration\PersonsService.cs" />
     <Compile Include="Administration\ProfessionsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\3.BusinessLayer\BusinessComponent\BusinessComponent\BusinessComponent.csproj">
