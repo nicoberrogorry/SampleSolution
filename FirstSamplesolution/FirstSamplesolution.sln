@@ -44,6 +44,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUserInterface", "1.WebUserInterface\WebUserInterface.csproj", "{BA215A3A-3A04-42B4-9734-2AAB1A157DC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIProcess", "2.0.UIProcess\UIProcess.csproj", "{1AC72C5A-DF32-419F-A6DE-4166C0175949}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1E2D2F1D-F891-4E46-A333-6872771DFADE} = {1E2D2F1D-F891-4E46-A333-6872771DFADE}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

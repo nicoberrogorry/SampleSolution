@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d92e3a84-ea48-4c0b-8957-c266340190ae" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProfessionsService.disco" MetadataType="Disco" ID="cc3b85a8-64a7-45cb-bd07-ef841bc6aa1b" SourceId="1" SourceUrl="http://localhost/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc?disco" />
+    <MetadataFile FileName="ProfessionsService.xsd" MetadataType="Schema" ID="d9215da8-7d69-4511-a4ad-7ab141f5d49f" SourceId="1" SourceUrl="http://localhost/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProfessionsService.wsdl" MetadataType="Wsdl" ID="aacb529e-63e8-45d7-a3c3-b5dca1900438" SourceId="1" SourceUrl="http://localhost/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc?wsdl" />
+    <MetadataFile FileName="ProfessionsService1.xsd" MetadataType="Schema" ID="3f0d109b-1e09-4e71-9c5e-2d761bbea92a" SourceId="1" SourceUrl="http://localhost/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProfessionsService2.xsd" MetadataType="Schema" ID="4e93eb28-624d-4b6e-be1f-0c39c35a55f9" SourceId="1" SourceUrl="http://localhost/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

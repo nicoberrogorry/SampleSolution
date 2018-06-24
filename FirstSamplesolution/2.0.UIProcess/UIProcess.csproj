@@ -42,6 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\PersonsServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProfessionsServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="PersonUIProcess.cs" />
     <Compile Include="ProfessionUIProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,12 +61,68 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Connected Services\PersonsServiceReference\PersonsService.wsdl" />
+    <None Include="Connected Services\PersonsServiceReference\PersonsService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PersonsServiceReference\PersonsService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PersonsServiceReference\PersonsService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService.wsdl" />
+    <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\BusinessEntities.Person.datasource" />
+    <None Include="Properties\DataSources\BusinessEntities.Profession.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\3.BusinessLayer\BusinessEntities\BusinessEntities\BusinessEntities.csproj">
       <Project>{08ece7d7-4170-42c5-b1ec-57a8b505d200}</Project>
       <Name>BusinessEntities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\PersonsServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\ProfessionsServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PersonsServiceReference\PersonsService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PersonsServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PersonsServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PersonsServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProfessionsServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProfessionsServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProfessionsServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
