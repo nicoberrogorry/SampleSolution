@@ -8,7 +8,7 @@ using WebUserInterface.Models.Administration;
 
 namespace WebUserInterface.Controllers.Basis
 {
-    public class PersonsController : Controller
+    public class AdministrationController : Controller
     {
         private PersonsUIProcess personsUIProcess = new PersonsUIProcess();
         private ProfessionsUIProcess professionsUIProcess = new ProfessionsUIProcess();
