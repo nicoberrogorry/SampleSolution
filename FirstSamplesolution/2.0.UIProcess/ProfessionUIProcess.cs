@@ -21,7 +21,10 @@ namespace UIProcess
             {
                 Profession[] professions = professionsServiceClient.GetProfessionsSummary();
 
-                result.AddRange(result);
+                foreach(var profession in professions)
+                {
+                    result.Add(profession);
+                }
             }
 
             return result;
