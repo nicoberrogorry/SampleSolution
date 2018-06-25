@@ -1,5 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FMHDataBase" Class="PersonsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=FMHDataBase;Persist Security Info=True;User ID=Developer" SettingsObjectName="LocalDataAccessLayer.Properties.Settings" SettingsPropertyName="FMHDataBaseConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="PersonsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Persist Security Info=True;User ID=Developer" SettingsObjectName="LocalDataAccessLayer.Properties.Settings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.CreatePerson" Method="CreatePerson">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="professionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cellularPhone" Type="System.String" DbType="VarChar(128)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="lastName" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="address" Type="System.String" DbType="NVarChar(512)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.FindPersonsSummary" Method="FindPersonsSummary">
     <Parameter Name="name" Type="System.String" DbType="NVarChar(128)" />
     <Parameter Name="professionId" Type="System.Int32" DbType="Int" />
@@ -13,15 +22,6 @@
       <Column Name="LastName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
       <Column Name="ProfessionDescription" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.CreatePerson" Method="CreatePerson">
-    <Parameter Name="name" Type="System.String" DbType="NVarChar(128)" />
-    <Parameter Name="professionId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="cellularPhone" Type="System.String" DbType="VarChar(128)" />
-    <Parameter Name="email" Type="System.String" DbType="NVarChar(512)" />
-    <Parameter Name="lastName" Type="System.String" DbType="NVarChar(128)" />
-    <Parameter Name="address" Type="System.String" DbType="NVarChar(512)" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.GetPersonDetails" Method="GetPersonDetails">
     <Parameter Name="PersonId" Parameter="personId" Type="System.Int32" DbType="Int" />

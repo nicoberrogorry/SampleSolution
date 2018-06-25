@@ -78,6 +78,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\3.BusinessLayer\BusinessEntities\BusinessEntities\BusinessEntities.csproj">
+      <Project>{08ece7d7-4170-42c5-b1ec-57a8b505d200}</Project>
+      <Name>BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{3aeafaa4-b961-4fc7-b977-18ef669b980a}</Project>
       <Name>Services</Name>

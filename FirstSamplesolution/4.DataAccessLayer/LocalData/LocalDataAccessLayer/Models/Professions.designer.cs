@@ -22,7 +22,7 @@ namespace LocalDataAccessLayer.Models
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name= "FirstSampleSolutionDataBase")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataSource")]
 	public partial class ProfessionsDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,7 +33,7 @@ namespace LocalDataAccessLayer.Models
     #endregion
 		
 		public ProfessionsDataContext() : 
-				base(global::LocalDataAccessLayer.Properties.Settings.Default.FMHDataBaseConnectionString, mappingSource)
+				base(global::LocalDataAccessLayer.Properties.Settings.Default.DataSourceConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

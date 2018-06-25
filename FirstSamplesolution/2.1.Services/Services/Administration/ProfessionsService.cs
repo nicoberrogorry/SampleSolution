@@ -4,10 +4,12 @@ using Services.Administration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Web;
 
 namespace Services.Administration
 {
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class ProfessionsService : IProfessionsService
     {
         public void CreateProfession(Profession profession)

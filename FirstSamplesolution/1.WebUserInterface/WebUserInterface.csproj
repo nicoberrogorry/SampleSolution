@@ -216,16 +216,16 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Administration\PersonFinder.cshtml" />
     <Content Include="Views\Administration\CreatePerson.cshtml" />
-    <Content Include="web.config">
+    <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Administration\PersonFinderDetails.cshtml" />
     <Content Include="Views\Administration\CreatePersonSuccess.cshtml" />
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
     </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -7,24 +7,21 @@ namespace UIProcess
     {
         public void CreateProfession(Profession profession)
         {
-            using (var professionsServiceClient = new ProfessionsServiceReference.ProfessionsServiceClient("BasicHttpBinding_IProfessionsService"))
+            using (var professionsServiceClient = new ProfessionsServiceClient())
             {
-                CreateProfessionRequest request = new CreateProfessionRequest()
-                {
-                    profession = profession
-                };
-
-                professionsServiceClient.CreateProfession(request);
+                professionsServiceClient.CreateProfession(profession);
             }
         }
 
         public List<Profession> GetProfessionsSummary()
         {
-            List<Profession> result = null;
+            List<Profession> result = new List<Profession>();
 
-            using (var professionsServiceClient = new ProfessionsServiceReference.ProfessionsServiceClient("BasicHttpBinding_IProfessionsService"))
+            using (var professionsServiceClient = new ProfessionsServiceClient())
             {
-                professionsServiceClient.GetProfessionsSummary(new GetProfessionsSummaryRequest());
+                Profession[] professions = professionsServiceClient.GetProfessionsSummary();
+
+                result.AddRange(result);
             }
 
             return result;

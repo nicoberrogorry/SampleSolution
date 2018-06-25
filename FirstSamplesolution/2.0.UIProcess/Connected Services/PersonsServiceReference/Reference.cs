@@ -345,73 +345,16 @@ namespace UIProcess.PersonsServiceReference {
     public interface IPersonsService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonsService/CreatePerson", ReplyAction="http://tempuri.org/IPersonsService/CreatePersonResponse")]
-        UIProcess.PersonsServiceReference.CreatePersonResponse CreatePerson(UIProcess.PersonsServiceReference.CreatePersonRequest request);
+        void CreatePerson(UIProcess.PersonsServiceReference.Person person);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonsService/CreatePerson", ReplyAction="http://tempuri.org/IPersonsService/CreatePersonResponse")]
-        System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.CreatePersonResponse> CreatePersonAsync(UIProcess.PersonsServiceReference.CreatePersonRequest request);
+        System.Threading.Tasks.Task CreatePersonAsync(UIProcess.PersonsServiceReference.Person person);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonsService/FindPersonsSummary", ReplyAction="http://tempuri.org/IPersonsService/FindPersonsSummaryResponse")]
-        UIProcess.PersonsServiceReference.FindPersonsSummaryResponse FindPersonsSummary(UIProcess.PersonsServiceReference.FindPersonsSummaryRequest request);
+        UIProcess.PersonsServiceReference.Person[] FindPersonsSummary(UIProcess.PersonsServiceReference.FindPersonsFilter findPersonsFilter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonsService/FindPersonsSummary", ReplyAction="http://tempuri.org/IPersonsService/FindPersonsSummaryResponse")]
-        System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.FindPersonsSummaryResponse> FindPersonsSummaryAsync(UIProcess.PersonsServiceReference.FindPersonsSummaryRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreatePerson", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class CreatePersonRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public UIProcess.PersonsServiceReference.Person person;
-        
-        public CreatePersonRequest() {
-        }
-        
-        public CreatePersonRequest(UIProcess.PersonsServiceReference.Person person) {
-            this.person = person;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreatePersonResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class CreatePersonResponse {
-        
-        public CreatePersonResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="FindPersonsSummary", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class FindPersonsSummaryRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public UIProcess.PersonsServiceReference.FindPersonsFilter findPersonsFilter;
-        
-        public FindPersonsSummaryRequest() {
-        }
-        
-        public FindPersonsSummaryRequest(UIProcess.PersonsServiceReference.FindPersonsFilter findPersonsFilter) {
-            this.findPersonsFilter = findPersonsFilter;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="FindPersonsSummaryResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class FindPersonsSummaryResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public System.Collections.Generic.List<UIProcess.PersonsServiceReference.Person> FindPersonsSummaryResult;
-        
-        public FindPersonsSummaryResponse() {
-        }
-        
-        public FindPersonsSummaryResponse(System.Collections.Generic.List<UIProcess.PersonsServiceReference.Person> FindPersonsSummaryResult) {
-            this.FindPersonsSummaryResult = FindPersonsSummaryResult;
-        }
+        System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.Person[]> FindPersonsSummaryAsync(UIProcess.PersonsServiceReference.FindPersonsFilter findPersonsFilter);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -441,20 +384,20 @@ namespace UIProcess.PersonsServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public UIProcess.PersonsServiceReference.CreatePersonResponse CreatePerson(UIProcess.PersonsServiceReference.CreatePersonRequest request) {
-            return base.Channel.CreatePerson(request);
+        public void CreatePerson(UIProcess.PersonsServiceReference.Person person) {
+            base.Channel.CreatePerson(person);
         }
         
-        public System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.CreatePersonResponse> CreatePersonAsync(UIProcess.PersonsServiceReference.CreatePersonRequest request) {
-            return base.Channel.CreatePersonAsync(request);
+        public System.Threading.Tasks.Task CreatePersonAsync(UIProcess.PersonsServiceReference.Person person) {
+            return base.Channel.CreatePersonAsync(person);
         }
         
-        public UIProcess.PersonsServiceReference.FindPersonsSummaryResponse FindPersonsSummary(UIProcess.PersonsServiceReference.FindPersonsSummaryRequest request) {
-            return base.Channel.FindPersonsSummary(request);
+        public UIProcess.PersonsServiceReference.Person[] FindPersonsSummary(UIProcess.PersonsServiceReference.FindPersonsFilter findPersonsFilter) {
+            return base.Channel.FindPersonsSummary(findPersonsFilter);
         }
         
-        public System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.FindPersonsSummaryResponse> FindPersonsSummaryAsync(UIProcess.PersonsServiceReference.FindPersonsSummaryRequest request) {
-            return base.Channel.FindPersonsSummaryAsync(request);
+        public System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.Person[]> FindPersonsSummaryAsync(UIProcess.PersonsServiceReference.FindPersonsFilter findPersonsFilter) {
+            return base.Channel.FindPersonsSummaryAsync(findPersonsFilter);
         }
     }
 }

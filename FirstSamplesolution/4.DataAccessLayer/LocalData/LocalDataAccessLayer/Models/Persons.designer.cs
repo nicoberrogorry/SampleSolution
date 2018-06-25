@@ -22,7 +22,7 @@ namespace LocalDataAccessLayer.Models
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name= "FirstSampleSolutionDataBase")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataSource")]
 	public partial class PersonsDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,7 +33,7 @@ namespace LocalDataAccessLayer.Models
     #endregion
 		
 		public PersonsDataContext() : 
-				base(global::LocalDataAccessLayer.Properties.Settings.Default.FMHDataBaseConnectionString, mappingSource)
+				base(global::LocalDataAccessLayer.Properties.Settings.Default.DataSourceConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -62,18 +62,18 @@ namespace LocalDataAccessLayer.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FindPersonsSummary")]
-		public ISingleResult<FindPersonsSummaryResult> FindPersonsSummary([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> professionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(128)")] string cellularPhone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string lastName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string address)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, professionId, cellularPhone, email, lastName, address);
-			return ((ISingleResult<FindPersonsSummaryResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CreatePerson")]
 		public int CreatePerson([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> professionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(128)")] string cellularPhone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string lastName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string address)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, professionId, cellularPhone, email, lastName, address);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FindPersonsSummary")]
+		public ISingleResult<FindPersonsSummaryResult> FindPersonsSummary([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> professionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(128)")] string cellularPhone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string lastName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string address)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, professionId, cellularPhone, email, lastName, address);
+			return ((ISingleResult<FindPersonsSummaryResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetPersonDetails")]

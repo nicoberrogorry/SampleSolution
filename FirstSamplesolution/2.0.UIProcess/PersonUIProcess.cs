@@ -7,31 +7,21 @@ namespace UIProcess
     {
         public void CreatePerson(Person person)
         {
-            using (var personsServiceClient = new PersonsServiceClient("BasicHttpBinding_IPersonsService"))
+            using (var personsServiceClient = new PersonsServiceClient())
             {
-                CreatePersonRequest request = new CreatePersonRequest()
-                {
-                    person = person
-                };
-                personsServiceClient.CreatePerson(request);
+                personsServiceClient.CreatePerson(person);
             }
         }
 
         public List<Person> FindPersonsSummary(FindPersonsFilter findPersonsFilter)
         {
-            List<Person> result = null;
+            List<Person> result = new List<Person>();
 
-            using (var personsServiceClient = new PersonsServiceClient("BasicHttpBinding_IPersonsService"))
+            using (var personsServiceClient = new PersonsServiceClient())
             {
-                FindPersonsSummaryRequest request = new FindPersonsSummaryRequest()
-                {
-                    findPersonsFilter = findPersonsFilter
-                };
+                Person[] persons = personsServiceClient.FindPersonsSummary(findPersonsFilter);
 
-                FindPersonsSummaryResponse response = personsServiceClient.FindPersonsSummary(request);
-
-                result = response.FindPersonsSummaryResult;
-
+                result.AddRange(persons);
             }
 
             return result;

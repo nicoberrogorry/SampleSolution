@@ -17,7 +17,7 @@ namespace WebUserInterface.Controllers
         {
             List<ProfessionSummaryViewModel> result = new List<ProfessionSummaryViewModel>();
 
-            List< UIProcess.ProfessionsServiceReference.Profession > professionsSummary = professionsUIProcess.GetProfessionsSummary();
+            var professionsSummary = professionsUIProcess.GetProfessionsSummary();
 
             foreach (var summary in professionsSummary)
             {

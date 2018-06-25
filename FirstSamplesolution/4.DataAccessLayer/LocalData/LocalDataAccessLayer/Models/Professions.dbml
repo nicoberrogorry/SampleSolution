@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FMHDataBase" Class="ProfessionsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=FMHDataBase;Persist Security Info=True;User ID=Developer" SettingsObjectName="LocalDataAccessLayer.Properties.Settings" SettingsPropertyName="FMHDataBaseConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="ProfessionsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Persist Security Info=True;User ID=Developer" SettingsObjectName="LocalDataAccessLayer.Properties.Settings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
   <Function Name="dbo.GetAllProfessionsSummary" Method="GetAllProfessionsSummary">
     <ElementType Name="GetAllProfessionsSummaryResult">
       <Column Name="ProfessionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

@@ -79,66 +79,16 @@ namespace UIProcess.ProfessionsServiceReference {
     public interface IProfessionsService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfessionsService/CreateProfession", ReplyAction="http://tempuri.org/IProfessionsService/CreateProfessionResponse")]
-        UIProcess.ProfessionsServiceReference.CreateProfessionResponse CreateProfession(UIProcess.ProfessionsServiceReference.CreateProfessionRequest request);
+        void CreateProfession(UIProcess.ProfessionsServiceReference.Profession profession);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfessionsService/CreateProfession", ReplyAction="http://tempuri.org/IProfessionsService/CreateProfessionResponse")]
-        System.Threading.Tasks.Task<UIProcess.ProfessionsServiceReference.CreateProfessionResponse> CreateProfessionAsync(UIProcess.ProfessionsServiceReference.CreateProfessionRequest request);
+        System.Threading.Tasks.Task CreateProfessionAsync(UIProcess.ProfessionsServiceReference.Profession profession);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfessionsService/GetProfessionsSummary", ReplyAction="http://tempuri.org/IProfessionsService/GetProfessionsSummaryResponse")]
-        UIProcess.ProfessionsServiceReference.GetProfessionsSummaryResponse GetProfessionsSummary(UIProcess.ProfessionsServiceReference.GetProfessionsSummaryRequest request);
+        UIProcess.ProfessionsServiceReference.Profession[] GetProfessionsSummary();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfessionsService/GetProfessionsSummary", ReplyAction="http://tempuri.org/IProfessionsService/GetProfessionsSummaryResponse")]
-        System.Threading.Tasks.Task<UIProcess.ProfessionsServiceReference.GetProfessionsSummaryResponse> GetProfessionsSummaryAsync(UIProcess.ProfessionsServiceReference.GetProfessionsSummaryRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateProfession", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class CreateProfessionRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public UIProcess.ProfessionsServiceReference.Profession profession;
-        
-        public CreateProfessionRequest() {
-        }
-        
-        public CreateProfessionRequest(UIProcess.ProfessionsServiceReference.Profession profession) {
-            this.profession = profession;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateProfessionResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class CreateProfessionResponse {
-        
-        public CreateProfessionResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetProfessionsSummary", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class GetProfessionsSummaryRequest {
-        
-        public GetProfessionsSummaryRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetProfessionsSummaryResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class GetProfessionsSummaryResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public System.Collections.Generic.List<UIProcess.ProfessionsServiceReference.Profession> GetProfessionsSummaryResult;
-        
-        public GetProfessionsSummaryResponse() {
-        }
-        
-        public GetProfessionsSummaryResponse(System.Collections.Generic.List<UIProcess.ProfessionsServiceReference.Profession> GetProfessionsSummaryResult) {
-            this.GetProfessionsSummaryResult = GetProfessionsSummaryResult;
-        }
+        System.Threading.Tasks.Task<UIProcess.ProfessionsServiceReference.Profession[]> GetProfessionsSummaryAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -168,20 +118,20 @@ namespace UIProcess.ProfessionsServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public UIProcess.ProfessionsServiceReference.CreateProfessionResponse CreateProfession(UIProcess.ProfessionsServiceReference.CreateProfessionRequest request) {
-            return base.Channel.CreateProfession(request);
+        public void CreateProfession(UIProcess.ProfessionsServiceReference.Profession profession) {
+            base.Channel.CreateProfession(profession);
         }
         
-        public System.Threading.Tasks.Task<UIProcess.ProfessionsServiceReference.CreateProfessionResponse> CreateProfessionAsync(UIProcess.ProfessionsServiceReference.CreateProfessionRequest request) {
-            return base.Channel.CreateProfessionAsync(request);
+        public System.Threading.Tasks.Task CreateProfessionAsync(UIProcess.ProfessionsServiceReference.Profession profession) {
+            return base.Channel.CreateProfessionAsync(profession);
         }
         
-        public UIProcess.ProfessionsServiceReference.GetProfessionsSummaryResponse GetProfessionsSummary(UIProcess.ProfessionsServiceReference.GetProfessionsSummaryRequest request) {
-            return base.Channel.GetProfessionsSummary(request);
+        public UIProcess.ProfessionsServiceReference.Profession[] GetProfessionsSummary() {
+            return base.Channel.GetProfessionsSummary();
         }
         
-        public System.Threading.Tasks.Task<UIProcess.ProfessionsServiceReference.GetProfessionsSummaryResponse> GetProfessionsSummaryAsync(UIProcess.ProfessionsServiceReference.GetProfessionsSummaryRequest request) {
-            return base.Channel.GetProfessionsSummaryAsync(request);
+        public System.Threading.Tasks.Task<UIProcess.ProfessionsServiceReference.Profession[]> GetProfessionsSummaryAsync() {
+            return base.Channel.GetProfessionsSummaryAsync();
         }
     }
 }

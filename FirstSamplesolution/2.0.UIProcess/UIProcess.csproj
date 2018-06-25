@@ -71,10 +71,7 @@
     <None Include="Connected Services\PersonsServiceReference\PersonsService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\PersonsServiceReference\UIProcess.PersonsServiceReference.CreatePersonResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\PersonsServiceReference\UIProcess.PersonsServiceReference.FindPersonsSummaryResponse.datasource">
+    <None Include="Connected Services\PersonsServiceReference\UIProcess.PersonsServiceReference.Person.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService.wsdl" />
@@ -87,10 +84,7 @@
     <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProfessionsServiceReference\UIProcess.ProfessionsServiceReference.CreateProfessionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ProfessionsServiceReference\UIProcess.ProfessionsServiceReference.GetProfessionsSummaryResponse.datasource">
+    <None Include="Connected Services\ProfessionsServiceReference\UIProcess.ProfessionsServiceReference.Profession.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\DataSources\BusinessEntities.Person.datasource" />
