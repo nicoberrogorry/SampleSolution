@@ -6,7 +6,7 @@ using WebUserInterface.Models.Administration.Shared;
 using WebUserInterface.Models.Administration;
 using UIProcess.PersonsServiceReference;
 
-namespace WebUserInterface.Controllers.Basis
+namespace WebUserInterface.Controllers
 {
     public class AdministrationController : Controller
     {
