@@ -9,23 +9,409 @@
 //------------------------------------------------------------------------------
 
 namespace UIProcess.PersonsServiceReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/BusinessEntities")]
+    [System.SerializableAttribute()]
+    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CellularPhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PersonIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UIProcess.PersonsServiceReference.Profession ProfessionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CellularPhone {
+            get {
+                return this.CellularPhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CellularPhoneField, value) != true)) {
+                    this.CellularPhoneField = value;
+                    this.RaisePropertyChanged("CellularPhone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PersonId {
+            get {
+                return this.PersonIdField;
+            }
+            set {
+                if ((this.PersonIdField.Equals(value) != true)) {
+                    this.PersonIdField = value;
+                    this.RaisePropertyChanged("PersonId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UIProcess.PersonsServiceReference.Profession Profession {
+            get {
+                return this.ProfessionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProfessionField, value) != true)) {
+                    this.ProfessionField = value;
+                    this.RaisePropertyChanged("Profession");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Profession", Namespace="http://schemas.datacontract.org/2004/07/BusinessEntities")]
+    [System.SerializableAttribute()]
+    public partial class Profession : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ProfessionIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ProfessionId {
+            get {
+                return this.ProfessionIdField;
+            }
+            set {
+                if ((this.ProfessionIdField.Equals(value) != true)) {
+                    this.ProfessionIdField = value;
+                    this.RaisePropertyChanged("ProfessionId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FindPersonsFilter", Namespace="http://schemas.datacontract.org/2004/07/BusinessEntities")]
+    [System.SerializableAttribute()]
+    public partial class FindPersonsFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CellularPhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ProfessionIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CellularPhone {
+            get {
+                return this.CellularPhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CellularPhoneField, value) != true)) {
+                    this.CellularPhoneField = value;
+                    this.RaisePropertyChanged("CellularPhone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ProfessionId {
+            get {
+                return this.ProfessionIdField;
+            }
+            set {
+                if ((this.ProfessionIdField.Equals(value) != true)) {
+                    this.ProfessionIdField = value;
+                    this.RaisePropertyChanged("ProfessionId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PersonsServiceReference.IPersonsService")]
     public interface IPersonsService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonsService/CreatePerson", ReplyAction="http://tempuri.org/IPersonsService/CreatePersonResponse")]
-        void CreatePerson(BusinessEntities.Person person);
+        UIProcess.PersonsServiceReference.CreatePersonResponse CreatePerson(UIProcess.PersonsServiceReference.CreatePersonRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonsService/CreatePerson", ReplyAction="http://tempuri.org/IPersonsService/CreatePersonResponse")]
-        System.Threading.Tasks.Task CreatePersonAsync(BusinessEntities.Person person);
+        System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.CreatePersonResponse> CreatePersonAsync(UIProcess.PersonsServiceReference.CreatePersonRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonsService/FindPersonsSummary", ReplyAction="http://tempuri.org/IPersonsService/FindPersonsSummaryResponse")]
-        System.Collections.Generic.List<BusinessEntities.Person> FindPersonsSummary(BusinessEntities.FindPersonsFilter findPersonsFilter);
+        UIProcess.PersonsServiceReference.FindPersonsSummaryResponse FindPersonsSummary(UIProcess.PersonsServiceReference.FindPersonsSummaryRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonsService/FindPersonsSummary", ReplyAction="http://tempuri.org/IPersonsService/FindPersonsSummaryResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<BusinessEntities.Person>> FindPersonsSummaryAsync(BusinessEntities.FindPersonsFilter findPersonsFilter);
+        System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.FindPersonsSummaryResponse> FindPersonsSummaryAsync(UIProcess.PersonsServiceReference.FindPersonsSummaryRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreatePerson", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreatePersonRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public UIProcess.PersonsServiceReference.Person person;
+        
+        public CreatePersonRequest() {
+        }
+        
+        public CreatePersonRequest(UIProcess.PersonsServiceReference.Person person) {
+            this.person = person;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreatePersonResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreatePersonResponse {
+        
+        public CreatePersonResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="FindPersonsSummary", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class FindPersonsSummaryRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public UIProcess.PersonsServiceReference.FindPersonsFilter findPersonsFilter;
+        
+        public FindPersonsSummaryRequest() {
+        }
+        
+        public FindPersonsSummaryRequest(UIProcess.PersonsServiceReference.FindPersonsFilter findPersonsFilter) {
+            this.findPersonsFilter = findPersonsFilter;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="FindPersonsSummaryResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class FindPersonsSummaryResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Collections.Generic.List<UIProcess.PersonsServiceReference.Person> FindPersonsSummaryResult;
+        
+        public FindPersonsSummaryResponse() {
+        }
+        
+        public FindPersonsSummaryResponse(System.Collections.Generic.List<UIProcess.PersonsServiceReference.Person> FindPersonsSummaryResult) {
+            this.FindPersonsSummaryResult = FindPersonsSummaryResult;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,20 +441,20 @@ namespace UIProcess.PersonsServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void CreatePerson(BusinessEntities.Person person) {
-            base.Channel.CreatePerson(person);
+        public UIProcess.PersonsServiceReference.CreatePersonResponse CreatePerson(UIProcess.PersonsServiceReference.CreatePersonRequest request) {
+            return base.Channel.CreatePerson(request);
         }
         
-        public System.Threading.Tasks.Task CreatePersonAsync(BusinessEntities.Person person) {
-            return base.Channel.CreatePersonAsync(person);
+        public System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.CreatePersonResponse> CreatePersonAsync(UIProcess.PersonsServiceReference.CreatePersonRequest request) {
+            return base.Channel.CreatePersonAsync(request);
         }
         
-        public System.Collections.Generic.List<BusinessEntities.Person> FindPersonsSummary(BusinessEntities.FindPersonsFilter findPersonsFilter) {
-            return base.Channel.FindPersonsSummary(findPersonsFilter);
+        public UIProcess.PersonsServiceReference.FindPersonsSummaryResponse FindPersonsSummary(UIProcess.PersonsServiceReference.FindPersonsSummaryRequest request) {
+            return base.Channel.FindPersonsSummary(request);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<BusinessEntities.Person>> FindPersonsSummaryAsync(BusinessEntities.FindPersonsFilter findPersonsFilter) {
-            return base.Channel.FindPersonsSummaryAsync(findPersonsFilter);
+        public System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.FindPersonsSummaryResponse> FindPersonsSummaryAsync(UIProcess.PersonsServiceReference.FindPersonsSummaryRequest request) {
+            return base.Channel.FindPersonsSummaryAsync(request);
         }
     }
 }

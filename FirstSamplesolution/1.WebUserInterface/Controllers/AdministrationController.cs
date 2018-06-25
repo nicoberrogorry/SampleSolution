@@ -3,8 +3,8 @@ using System.Web.Mvc;
 using System.Linq;
 using UIProcess;
 using WebUserInterface.Models.Administration.Shared;
-using BusinessEntities;
 using WebUserInterface.Models.Administration;
+using UIProcess.PersonsServiceReference;
 
 namespace WebUserInterface.Controllers.Basis
 {
@@ -17,7 +17,7 @@ namespace WebUserInterface.Controllers.Basis
         {
             List<ProfessionSummaryViewModel> result = new List<ProfessionSummaryViewModel>();
 
-            List<Profession> professionsSummary = professionsUIProcess.GetProfessionsSummary();
+            List< UIProcess.ProfessionsServiceReference.Profession > professionsSummary = professionsUIProcess.GetProfessionsSummary();
 
             foreach (var summary in professionsSummary)
             {

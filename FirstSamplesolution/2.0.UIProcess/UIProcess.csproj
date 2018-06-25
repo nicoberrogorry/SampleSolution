@@ -71,6 +71,12 @@
     <None Include="Connected Services\PersonsServiceReference\PersonsService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\PersonsServiceReference\UIProcess.PersonsServiceReference.CreatePersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonsServiceReference\UIProcess.PersonsServiceReference.FindPersonsSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService.wsdl" />
     <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService.xsd">
       <SubType>Designer</SubType>
@@ -81,14 +87,14 @@
     <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ProfessionsServiceReference\UIProcess.ProfessionsServiceReference.CreateProfessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProfessionsServiceReference\UIProcess.ProfessionsServiceReference.GetProfessionsSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\BusinessEntities.Person.datasource" />
     <None Include="Properties\DataSources\BusinessEntities.Profession.datasource" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\3.BusinessLayer\BusinessEntities\BusinessEntities\BusinessEntities.csproj">
-      <Project>{08ece7d7-4170-42c5-b1ec-57a8b505d200}</Project>
-      <Name>BusinessEntities</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\PersonsServiceReference\" />

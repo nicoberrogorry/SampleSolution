@@ -102,7 +102,7 @@
       <soap:address location="http://localhost/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpsBinding_IProfessionsService" binding="tns:BasicHttpsBinding_IProfessionsService">
-      <soap:address location="https://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc" />
+      <soap:address location="https://dell-kv9bcabeoc/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

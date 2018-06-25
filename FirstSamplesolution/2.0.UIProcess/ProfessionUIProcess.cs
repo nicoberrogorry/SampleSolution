@@ -1,5 +1,5 @@
-﻿using BusinessEntities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UIProcess.ProfessionsServiceReference;
 
 namespace UIProcess
 {
@@ -7,9 +7,14 @@ namespace UIProcess
     {
         public void CreateProfession(Profession profession)
         {
-            using (var professionsServiceClient = new ProfessionsServiceReference.ProfessionsServiceClient())
+            using (var professionsServiceClient = new ProfessionsServiceReference.ProfessionsServiceClient("BasicHttpBinding_IProfessionsService"))
             {
-                professionsServiceClient.CreateProfession(profession);
+                CreateProfessionRequest request = new CreateProfessionRequest()
+                {
+                    profession = profession
+                };
+
+                professionsServiceClient.CreateProfession(request);
             }
         }
 
@@ -17,9 +22,9 @@ namespace UIProcess
         {
             List<Profession> result = null;
 
-            using (var professionsServiceClient = new ProfessionsServiceReference.ProfessionsServiceClient())
+            using (var professionsServiceClient = new ProfessionsServiceReference.ProfessionsServiceClient("BasicHttpBinding_IProfessionsService"))
             {
-                professionsServiceClient.GetProfessionsSummary();
+                professionsServiceClient.GetProfessionsSummary(new GetProfessionsSummaryRequest());
             }
 
             return result;

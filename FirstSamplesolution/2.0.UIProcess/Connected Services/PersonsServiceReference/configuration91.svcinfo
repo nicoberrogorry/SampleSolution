@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="hgVyZyJ9BNBXDTO1CiePpWs//CA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Zem8aHMFCHM1+7K6znsUcjkxEMs=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IPersonsService">
       <properties>
@@ -306,10 +306,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpsBinding_IPersonsService" contract="PersonsServiceReference.IPersonsService" bindingType="basicHttpBinding" address="https://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc" bindingConfiguration="BasicHttpsBinding_IPersonsService">
+    <endpoint name="BasicHttpsBinding_IPersonsService" contract="PersonsServiceReference.IPersonsService" bindingType="basicHttpBinding" address="https://dell-kv9bcabeoc/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc" bindingConfiguration="BasicHttpsBinding_IPersonsService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc</serializedValue>
+          <serializedValue>https://dell-kv9bcabeoc/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

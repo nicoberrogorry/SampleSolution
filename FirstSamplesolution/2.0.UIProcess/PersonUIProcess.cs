@@ -1,5 +1,4 @@
-﻿using BusinessEntities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UIProcess.PersonsServiceReference;
 
 namespace UIProcess
@@ -8,9 +7,13 @@ namespace UIProcess
     {
         public void CreatePerson(Person person)
         {
-            using (var personsServiceClient = new PersonsServiceClient())
+            using (var personsServiceClient = new PersonsServiceClient("BasicHttpBinding_IPersonsService"))
             {
-                personsServiceClient.CreatePerson(person);
+                CreatePersonRequest request = new CreatePersonRequest()
+                {
+                    person = person
+                };
+                personsServiceClient.CreatePerson(request);
             }
         }
 
@@ -18,9 +21,17 @@ namespace UIProcess
         {
             List<Person> result = null;
 
-            using (var personsServiceClient = new PersonsServiceClient())
+            using (var personsServiceClient = new PersonsServiceClient("BasicHttpBinding_IPersonsService"))
             {
-                result = personsServiceClient.FindPersonsSummary(findPersonsFilter);
+                FindPersonsSummaryRequest request = new FindPersonsSummaryRequest()
+                {
+                    findPersonsFilter = findPersonsFilter
+                };
+
+                FindPersonsSummaryResponse response = personsServiceClient.FindPersonsSummary(request);
+
+                result = response.FindPersonsSummaryResult;
+
             }
 
             return result;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Web;
 
-namespace Services.Administration.Interfaces
+namespace Services.Administration
 {
     [ServiceContract]
     public interface IPersonsService

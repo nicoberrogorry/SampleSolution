@@ -22,7 +22,7 @@ namespace LocalDataAccessLayer.Models
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="FMHDataBase")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name= "FirstSampleSolutionDataBase")]
 	public partial class PersonsDataContext : System.Data.Linq.DataContext
 	{
 		

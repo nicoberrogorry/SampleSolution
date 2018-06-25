@@ -1,6 +1,6 @@
 ﻿using BusinessComponent.Administration;
 using BusinessEntities;
-using Services.Administration.Interfaces;
+using Services.Administration;
 using System;
 using System.Collections.Generic;
 using System.Linq;

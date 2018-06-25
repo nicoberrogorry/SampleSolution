@@ -216,7 +216,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Administration\PersonFinder.cshtml" />
     <Content Include="Views\Administration\CreatePerson.cshtml" />
-    <Content Include="web.config" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Administration\PersonFinderDetails.cshtml" />
     <Content Include="Views\Administration\CreatePersonSuccess.cshtml" />
     <None Include="web.Debug.config">
@@ -245,10 +247,6 @@
     <ProjectReference Include="..\2.0.UIProcess\UIProcess.csproj">
       <Project>{1ac72c5a-df32-419f-a6de-4166c0175949}</Project>
       <Name>UIProcess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\3.BusinessLayer\BusinessEntities\BusinessEntities\BusinessEntities.csproj">
-      <Project>{08ece7d7-4170-42c5-b1ec-57a8b505d200}</Project>
-      <Name>BusinessEntities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

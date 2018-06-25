@@ -61,8 +61,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administration\Interfaces\IPersonsService.cs" />
-    <Compile Include="Administration\Interfaces\IProfessionsService.cs" />
+    <Compile Include="Administration\IPersonsService.cs" />
+    <Compile Include="Administration\IProfessionsService.cs" />
     <Compile Include="Administration\PersonsService.cs" />
     <Compile Include="Administration\ProfessionsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

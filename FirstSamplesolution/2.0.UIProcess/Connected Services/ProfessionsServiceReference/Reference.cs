@@ -9,23 +9,136 @@
 //------------------------------------------------------------------------------
 
 namespace UIProcess.ProfessionsServiceReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Profession", Namespace="http://schemas.datacontract.org/2004/07/BusinessEntities")]
+    [System.SerializableAttribute()]
+    public partial class Profession : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ProfessionIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ProfessionId {
+            get {
+                return this.ProfessionIdField;
+            }
+            set {
+                if ((this.ProfessionIdField.Equals(value) != true)) {
+                    this.ProfessionIdField = value;
+                    this.RaisePropertyChanged("ProfessionId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProfessionsServiceReference.IProfessionsService")]
     public interface IProfessionsService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfessionsService/CreateProfession", ReplyAction="http://tempuri.org/IProfessionsService/CreateProfessionResponse")]
-        void CreateProfession(BusinessEntities.Profession profession);
+        UIProcess.ProfessionsServiceReference.CreateProfessionResponse CreateProfession(UIProcess.ProfessionsServiceReference.CreateProfessionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfessionsService/CreateProfession", ReplyAction="http://tempuri.org/IProfessionsService/CreateProfessionResponse")]
-        System.Threading.Tasks.Task CreateProfessionAsync(BusinessEntities.Profession profession);
+        System.Threading.Tasks.Task<UIProcess.ProfessionsServiceReference.CreateProfessionResponse> CreateProfessionAsync(UIProcess.ProfessionsServiceReference.CreateProfessionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfessionsService/GetProfessionsSummary", ReplyAction="http://tempuri.org/IProfessionsService/GetProfessionsSummaryResponse")]
-        BusinessEntities.Profession[] GetProfessionsSummary();
+        UIProcess.ProfessionsServiceReference.GetProfessionsSummaryResponse GetProfessionsSummary(UIProcess.ProfessionsServiceReference.GetProfessionsSummaryRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfessionsService/GetProfessionsSummary", ReplyAction="http://tempuri.org/IProfessionsService/GetProfessionsSummaryResponse")]
-        System.Threading.Tasks.Task<BusinessEntities.Profession[]> GetProfessionsSummaryAsync();
+        System.Threading.Tasks.Task<UIProcess.ProfessionsServiceReference.GetProfessionsSummaryResponse> GetProfessionsSummaryAsync(UIProcess.ProfessionsServiceReference.GetProfessionsSummaryRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateProfession", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateProfessionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public UIProcess.ProfessionsServiceReference.Profession profession;
+        
+        public CreateProfessionRequest() {
+        }
+        
+        public CreateProfessionRequest(UIProcess.ProfessionsServiceReference.Profession profession) {
+            this.profession = profession;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateProfessionResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateProfessionResponse {
+        
+        public CreateProfessionResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetProfessionsSummary", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GetProfessionsSummaryRequest {
+        
+        public GetProfessionsSummaryRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetProfessionsSummaryResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GetProfessionsSummaryResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Collections.Generic.List<UIProcess.ProfessionsServiceReference.Profession> GetProfessionsSummaryResult;
+        
+        public GetProfessionsSummaryResponse() {
+        }
+        
+        public GetProfessionsSummaryResponse(System.Collections.Generic.List<UIProcess.ProfessionsServiceReference.Profession> GetProfessionsSummaryResult) {
+            this.GetProfessionsSummaryResult = GetProfessionsSummaryResult;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,20 +168,20 @@ namespace UIProcess.ProfessionsServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void CreateProfession(BusinessEntities.Profession profession) {
-            base.Channel.CreateProfession(profession);
+        public UIProcess.ProfessionsServiceReference.CreateProfessionResponse CreateProfession(UIProcess.ProfessionsServiceReference.CreateProfessionRequest request) {
+            return base.Channel.CreateProfession(request);
         }
         
-        public System.Threading.Tasks.Task CreateProfessionAsync(BusinessEntities.Profession profession) {
-            return base.Channel.CreateProfessionAsync(profession);
+        public System.Threading.Tasks.Task<UIProcess.ProfessionsServiceReference.CreateProfessionResponse> CreateProfessionAsync(UIProcess.ProfessionsServiceReference.CreateProfessionRequest request) {
+            return base.Channel.CreateProfessionAsync(request);
         }
         
-        public BusinessEntities.Profession[] GetProfessionsSummary() {
-            return base.Channel.GetProfessionsSummary();
+        public UIProcess.ProfessionsServiceReference.GetProfessionsSummaryResponse GetProfessionsSummary(UIProcess.ProfessionsServiceReference.GetProfessionsSummaryRequest request) {
+            return base.Channel.GetProfessionsSummary(request);
         }
         
-        public System.Threading.Tasks.Task<BusinessEntities.Profession[]> GetProfessionsSummaryAsync() {
-            return base.Channel.GetProfessionsSummaryAsync();
+        public System.Threading.Tasks.Task<UIProcess.ProfessionsServiceReference.GetProfessionsSummaryResponse> GetProfessionsSummaryAsync(UIProcess.ProfessionsServiceReference.GetProfessionsSummaryRequest request) {
+            return base.Channel.GetProfessionsSummaryAsync(request);
         }
     }
 }
