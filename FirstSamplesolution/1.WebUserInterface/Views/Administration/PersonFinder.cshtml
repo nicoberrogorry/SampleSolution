@@ -37,42 +37,47 @@ new SelectList(Model.ProfessionsList, "ProfessionId", "Description"), "Select pr
     else
     {
         <h4>Persons found:</h4>
-        @Html.HiddenFor(selectedPersonId => Model.SelectedPersonId)
-        <script>
-            $('.GoToDetailsForm').submit(function () {
-                $('#SelectedPersonId').val($(this).data('PersonId'));
-                alert($(this).data('PersonId'))
-            });
-        </script>
-        <table id="SearchResults" border="1">
-            <tr>
-                <th style="display:none">Hidden PersonId</th>
-                <th style="padding-left: 1em; padding-right: 1em">Name</th>
-                <th style="padding-left: 1em; padding-right: 1em">Last Name</th>
-                <th style="padding-left: 1em; padding-right: 1em">Profession Description</th>
-                <th style="padding-left: 1em; padding-right: 1em">Go to details</th>
-            </tr>
+        using (Html.BeginForm("PersonFinderDetails", "Administration",
+            new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
+                new { @class = "form-horizontal;", role = "form" }))
+        {
+            @Html.HiddenFor(selectedPersonId => Model.SelectedPersonId)
 
-            @foreach (var match in Model.SearchResults)
-            {
+            <table id="SearchResults" border="1">
                 <tr>
-                    <td style="padding-left: 1em;">
-                        <p>@match.Name</p>
-                    </td>
-                    <td style="padding-left: 1em;">
-                        <p>@match.LastName</p>
-                    </td>
-                    <td style="padding-left: 1em;">
-                        <p>@match.ProfessionSummary.Description</p>
-                    </td>
-                    <td style="padding-left: 0px; padding-right: 0px">
-                        @using (Html.BeginForm("PersonFinderDetails", "Administration", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { data_PersonId = "@match.PersonId", @class = "form-horizontal; GoToDetailsForm", role = "form" }))
-                        {
-                            <input type="submit" value="->" style="width: 100%" class="GoToDetailsButton"/>
-                        }
-                    </td>
+                    <th style="display:none">Hidden PersonId</th>
+                    <th style="padding-left: 1em; padding-right: 1em">Name</th>
+                    <th style="padding-left: 1em; padding-right: 1em">Last Name</th>
+                    <th style="padding-left: 1em; padding-right: 1em">Profession Description</th>
+                    <th style="padding-left: 1em; padding-right: 1em">Go to details</th>
                 </tr>
-            }
-        </table>
+
+                @foreach (var match in Model.SearchResults)
+                {
+                    <tr>
+                        <td style="padding-left: 1em;">
+                            <p>@match.Name</p>
+                        </td>
+                        <td style="padding-left: 1em;">
+                            <p>@match.LastName</p>
+                        </td>
+                        <td style="padding-left: 1em;">
+                            <p>@match.ProfessionSummary.Description</p>
+                        </td>
+                        <td style="padding-left: 0px; padding-right: 0px">
+                            <input onclick="SelectPersonId('@match.PersonId')"
+                                   type="submit" value="->" style="width: 100%"
+                                   class="GoToDetailsButton" />
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
     }
 }
+
+<script>
+    function SelectPersonId(personId) {
+        $('#SelectedPersonId').val(personId);
+    }
+</script>

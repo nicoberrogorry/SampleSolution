@@ -6,9 +6,9 @@
 
 <h1>Person Details</h1>
 
-<p>@Html.TextAreaFor(name => @Model.PersonDetails.Name)</p>
-<p>@Html.TextAreaFor(lastName => @Model.PersonDetails.LastName)</p>
-<p>@Html.TextAreaFor(profession => @Model.PersonDetails.ProfessionSummary.Description)</p>
-<p>@Html.TextAreaFor(cellularPhone => @Model.PersonDetails.CellularPhone)</p>
-<p>@Html.TextAreaFor(email => @Model.PersonDetails.Email)</p>
-<p>@Html.TextAreaFor(address => @Model.PersonDetails.Address)</p>
+<p>@Html.TextBoxFor(name => @Model.PersonDetails.Name, new { @readonly = true })</p>
+<p>@Html.TextBoxFor(lastName => @Model.PersonDetails.LastName, new { @readonly = true })</p>
+<p>@Html.TextBoxFor(profession => @Model.PersonDetails.ProfessionSummary.Description, new { @readonly = true })</p>
+<p>@Html.TextBoxFor(cellularPhone => @Model.PersonDetails.CellularPhone, new { @readonly = true })</p>
+<p>@Html.TextBoxFor(email => @Model.PersonDetails.Email, new { @readonly = true })</p>
+<p>@Html.TextBoxFor(address => @Model.PersonDetails.Address, new { @readonly = true })</p>
