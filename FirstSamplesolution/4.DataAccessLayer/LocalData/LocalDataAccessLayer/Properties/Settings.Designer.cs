@@ -26,7 +26,7 @@ namespace LocalDataAccessLayer.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Persist Security Info=True;User ID=Developer;Password=devel" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=FirstSampleSolutionDataBase; Persist Security Info=True;User ID=Developer;Password=devel" +
             "oper")]
         public string DataSourceConnectionString {
             get {
