@@ -4,22 +4,24 @@ using System.Collections.Generic;
 
 namespace BusinessComponent.Administration
 {
-    public class PersonComponent
+    public class PersonsComponent
     {
+        private PersonDataAccess personDataAccess = new PersonDataAccess();
+
         public void CreatePerson(Person person)
         {
-            PersonDataAccess personDataAccess = new PersonDataAccess();
             personDataAccess.CreatePerson(person);
         }
 
-        public static List<Person> FindPersonsSummary(FindPersonsFilter findPersonFilter)
+        public List<Person> FindPersonsSummary(FindPersonsFilter findPersonFilter)
         {
-            List<Person> result = null;
+            List<Person> result = personDataAccess.FindPersonsSummary(findPersonFilter);
+            return result;
+        }
 
-            PersonDataAccess personDataAccess = new PersonDataAccess();
-
-            result = personDataAccess.FindPersonsSummary(findPersonFilter);
-
+        public Person GetPersonDetails(int personId)
+        {
+            Person result = personDataAccess.GetPersonDetails(personId);
             return result;
         }
     }

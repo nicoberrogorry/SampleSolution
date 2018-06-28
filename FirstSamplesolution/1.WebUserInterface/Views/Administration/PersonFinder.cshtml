@@ -10,42 +10,22 @@
         new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
         new { @class = "form-horizontal", role = "form" }))
 {
-    <p>
-        Name <br />
-        @Html.EditorFor(@model => @model.PersonDetails.Name)
-    </p>
+    <p> Name <br /> @Html.EditorFor(@model => @model.PersonDetails.Name) </p>
+
+    <p> Last Name <br /> @Html.EditorFor(@model => @model.PersonDetails.LastName) </p>
 
     <p>
-        Last Name <br />
-        @Html.EditorFor(@model => @model.PersonDetails.LastName)
+        Profession <br /> @Html.DropDownListFor(@model => @model.PersonDetails.ProfessionSummary.ProfessionId,
+new SelectList(Model.ProfessionsList, "ProfessionId", "Description"), "Select profession")
     </p>
 
-    <p>
-    <p>
-        Profession <br />
-        @Html.DropDownListFor(@model => @model.PersonDetails.ProfessionSummary.ProfessionId,
-    new SelectList(Model.ProfessionsList, "ProfessionId", "Description"), "Select profession")
-    </p>
-    </p>
+    <p> Address <br /> @Html.EditorFor(@model => @model.PersonDetails.Address) </p>
 
-    <p>
-        Address <br />
-        @Html.EditorFor(@model => @model.PersonDetails.Address)
-    </p>
+    <p> Cellular Phone <br /> @Html.EditorFor(@model => @model.PersonDetails.CellularPhone) </p>
 
-    <p>
-        Cellular Phone <br />
-        @Html.EditorFor(@model => @model.PersonDetails.CellularPhone)
-    </p>
+    <p> Email <br /> @Html.EditorFor(@model => @model.PersonDetails.Email) </p>
 
-    <p>
-        Email <br />
-        @Html.EditorFor(@model => @model.PersonDetails.Email)
-    </p>
-
-    <p>
-        <input type="submit" value="Find" class="button button-3d nomargin" />
-    </p>
+    <p> <input type="submit" value="Search" class="button button-3d nomargin" /> </p>
 }
 
 @if (Model.SearchResults != null)
@@ -57,7 +37,14 @@
     else
     {
         <h4>Persons found:</h4>
-        <table border="1">
+        @Html.HiddenFor(selectedPersonId => Model.SelectedPersonId)
+        <script>
+            $('.GoToDetailsForm').submit(function () {
+                $('#SelectedPersonId').val($(this).data('PersonId'));
+                alert($(this).data('PersonId'))
+            });
+        </script>
+        <table id="SearchResults" border="1">
             <tr>
                 <th style="display:none">Hidden PersonId</th>
                 <th style="padding-left: 1em; padding-right: 1em">Name</th>
@@ -65,12 +52,10 @@
                 <th style="padding-left: 1em; padding-right: 1em">Profession Description</th>
                 <th style="padding-left: 1em; padding-right: 1em">Go to details</th>
             </tr>
+
             @foreach (var match in Model.SearchResults)
             {
-                <tr data-PersonId="">
-                    <td style="display:none">
-                        @Html.HiddenFor(@model => model.PersonDetails.PersonId)
-                    </td>
+                <tr>
                     <td style="padding-left: 1em;">
                         <p>@match.Name</p>
                     </td>
@@ -81,16 +66,13 @@
                         <p>@match.ProfessionSummary.Description</p>
                     </td>
                     <td style="padding-left: 0px; padding-right: 0px">
-                        @using (Html.BeginForm("PersonFinderDetails", "Administration",
-                                new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
-                                new { @class = "form-horizontal", role = "form" }))
+                        @using (Html.BeginForm("PersonFinderDetails", "Administration", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { data_PersonId = "@match.PersonId", @class = "form-horizontal; GoToDetailsForm", role = "form" }))
                         {
-                            <input type="submit" value="->" style="width: 100%" />
+                            <input type="submit" value="->" style="width: 100%" class="GoToDetailsButton"/>
                         }
                     </td>
                 </tr>
             }
-
         </table>
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UIProcess.PersonsServiceReference;
 
 namespace UIProcess
@@ -22,6 +23,18 @@ namespace UIProcess
                 Person[] persons = personsServiceClient.FindPersonsSummary(findPersonsFilter);
 
                 result.AddRange(persons);
+            }
+
+            return result;
+        }
+
+        public Person GetPersonDetails(int selectedPersonId)
+        {
+            Person result = null;
+
+            using (var personsServiceClient = new PersonsServiceClient())
+            {
+                result = personsServiceClient.GetPersonDetails(selectedPersonId);
             }
 
             return result;

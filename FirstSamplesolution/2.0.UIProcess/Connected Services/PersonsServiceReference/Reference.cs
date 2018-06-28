@@ -355,6 +355,12 @@ namespace UIProcess.PersonsServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonsService/FindPersonsSummary", ReplyAction="http://tempuri.org/IPersonsService/FindPersonsSummaryResponse")]
         System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.Person[]> FindPersonsSummaryAsync(UIProcess.PersonsServiceReference.FindPersonsFilter findPersonsFilter);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonsService/GetPersonDetails", ReplyAction="http://tempuri.org/IPersonsService/GetPersonDetailsResponse")]
+        UIProcess.PersonsServiceReference.Person GetPersonDetails(int personId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonsService/GetPersonDetails", ReplyAction="http://tempuri.org/IPersonsService/GetPersonDetailsResponse")]
+        System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.Person> GetPersonDetailsAsync(int personId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -398,6 +404,14 @@ namespace UIProcess.PersonsServiceReference {
         
         public System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.Person[]> FindPersonsSummaryAsync(UIProcess.PersonsServiceReference.FindPersonsFilter findPersonsFilter) {
             return base.Channel.FindPersonsSummaryAsync(findPersonsFilter);
+        }
+        
+        public UIProcess.PersonsServiceReference.Person GetPersonDetails(int personId) {
+            return base.Channel.GetPersonDetails(personId);
+        }
+        
+        public System.Threading.Tasks.Task<UIProcess.PersonsServiceReference.Person> GetPersonDetailsAsync(int personId) {
+            return base.Channel.GetPersonDetailsAsync(personId);
         }
     }
 }

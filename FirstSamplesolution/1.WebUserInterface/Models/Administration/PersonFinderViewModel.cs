@@ -13,5 +13,7 @@ namespace WebUserInterface.Models.Administration
         public PersonDetailsViewModel PersonDetails { get; set; }
 
         public List<PersonSummaryViewModel> SearchResults { get; set; }
+
+        public int SelectedPersonId { get; set; }
     }
 }

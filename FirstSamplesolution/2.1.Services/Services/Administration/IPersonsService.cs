@@ -15,5 +15,8 @@ namespace Services.Administration
 
         [OperationContract]
         List<Person> FindPersonsSummary(FindPersonsFilter findPersonsFilter);
+
+        [OperationContract]
+        Person GetPersonDetails(int personId);
     }
 }

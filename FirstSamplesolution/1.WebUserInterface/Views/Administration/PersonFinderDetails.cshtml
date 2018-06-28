@@ -5,3 +5,10 @@
 }
 
 <h1>Person Details</h1>
+
+<p>@Html.TextAreaFor(name => @Model.PersonDetails.Name)</p>
+<p>@Html.TextAreaFor(lastName => @Model.PersonDetails.LastName)</p>
+<p>@Html.TextAreaFor(profession => @Model.PersonDetails.ProfessionSummary.Description)</p>
+<p>@Html.TextAreaFor(cellularPhone => @Model.PersonDetails.CellularPhone)</p>
+<p>@Html.TextAreaFor(email => @Model.PersonDetails.Email)</p>
+<p>@Html.TextAreaFor(address => @Model.PersonDetails.Address)</p>

@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PersonsService.disco" MetadataType="Disco" ID="1f7a2c55-1663-4c51-8943-6710ce99108e" SourceId="1" SourceUrl="http://localhost/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc?disco" />
-    <MetadataFile FileName="PersonsService.wsdl" MetadataType="Wsdl" ID="5e7fc9d3-3a26-4ff3-8d97-d6da881e42d9" SourceId="1" SourceUrl="http://localhost/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc?wsdl" />
-    <MetadataFile FileName="PersonsService.xsd" MetadataType="Schema" ID="7cc5afc7-b54d-4e28-a801-6e7e8ad9759b" SourceId="1" SourceUrl="http://localhost/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc?xsd=xsd1" />
-    <MetadataFile FileName="PersonsService1.xsd" MetadataType="Schema" ID="b339bc4a-832a-4b5e-978d-fb3c78ef8540" SourceId="1" SourceUrl="http://localhost/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PersonsService2.xsd" MetadataType="Schema" ID="d4ff5bfa-09a5-4e8a-84bd-ab6abb85aff3" SourceId="1" SourceUrl="http://localhost/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PersonsService3.xsd" MetadataType="Schema" ID="d2a94e5c-3bec-40d7-a133-531bf2da63ce" SourceId="1" SourceUrl="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PersonsService31.xsd" MetadataType="Schema" ID="e3b5ebca-3767-4ba4-bbfe-6f8af6b4d638" SourceId="1" SourceUrl="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PersonsService32.xsd" MetadataType="Schema" ID="7702b862-9ca6-4854-9b66-c7d0cf888cb8" SourceId="1" SourceUrl="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PersonsService1.disco" MetadataType="Disco" ID="4407c974-2f04-4684-83d6-b5f16912697d" SourceId="1" SourceUrl="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc?disco" />
+    <MetadataFile FileName="PersonsService1.wsdl" MetadataType="Wsdl" ID="89fc1e86-bb1d-4fb7-97e9-4f8b32bd1b36" SourceId="1" SourceUrl="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -153,8 +153,27 @@ namespace WebUserInterface.Controllers
         [HttpPost]
         public ActionResult PersonFinderDetails(PersonFinderViewModel personFinderViewModel)
         {
+
+            Person person = personsUIProcess.GetPersonDetails(personFinderViewModel.SelectedPersonId);
+
+            ProfessionSummaryViewModel professionSummary = new ProfessionSummaryViewModel()
+            {
+                Description = person.Profession.Description
+            };
+
+            PersonDetailsViewModel personDetails = new PersonDetailsViewModel()
+            {
+                Name = person.Name,
+                LastName = person.LastName,
+                ProfessionSummary = professionSummary,
+                CellularPhone = person.CellularPhone,
+                Address = person.Address,
+                Email = person.Email
+            };
+
             PersonFinderDetailsViewModel personFinderDetailsViewModel = new PersonFinderDetailsViewModel()
             {
+                PersonDetails = personDetails
             };
 
             return View(personFinderDetailsViewModel);

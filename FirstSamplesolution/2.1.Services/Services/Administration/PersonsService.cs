@@ -1,31 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
-using System.Web;
 using BusinessComponent.Administration;
 using BusinessEntities;
-using Services.Administration;
 
 namespace Services.Administration
 {
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class PersonsService : IPersonsService
     {
+        private PersonsComponent personsComponent = new PersonsComponent();
+
         public void CreatePerson(Person person)
         {
-            PersonComponent personComponent = new PersonComponent();
-            personComponent.CreatePerson(person);
+            personsComponent.CreatePerson(person);
         }
 
         public List<Person> FindPersonsSummary(FindPersonsFilter findPersonsFilter)
         {
-            List<Person> result = null;
+            List<Person> result = personsComponent.FindPersonsSummary(findPersonsFilter);
+            return result;
+        }
 
-            PersonComponent personComponent = new PersonComponent();
-
-            result = PersonComponent.FindPersonsSummary(findPersonsFilter);
-
+        public Person GetPersonDetails(int personId)
+        {
+            Person result = personsComponent.GetPersonDetails(personId);
             return result;
         }
     }
