@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8bfd9b72-fab3-4ebc-b996-9e376852e308" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProfessionsService.xsd" MetadataType="Schema" ID="92f765cd-e188-48a7-97d4-97dae87f9da4" SourceId="1" SourceUrl="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProfessionsService1.xsd" MetadataType="Schema" ID="023999b3-0cd2-4ca0-b743-75953ed73042" SourceId="1" SourceUrl="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProfessionsService.wsdl" MetadataType="Wsdl" ID="c03a1650-10d2-4c97-90c8-c798fb0bc368" SourceId="1" SourceUrl="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc?wsdl" />
+    <MetadataFile FileName="ProfessionsService.disco" MetadataType="Disco" ID="187ad461-8082-4831-aec0-ad8de3974887" SourceId="1" SourceUrl="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc?disco" />
+    <MetadataFile FileName="ProfessionsService2.xsd" MetadataType="Schema" ID="609c2b1c-3c44-4eff-b9be-b2f45efd4b59" SourceId="1" SourceUrl="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
