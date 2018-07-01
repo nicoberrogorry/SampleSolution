@@ -168,7 +168,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\ProfessionsReference\Reference.cs">
+    <Compile Include="Connected Services\ProfessionsServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -193,10 +193,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\ProfessionsReference\ProfessionsService.disco" />
-    <None Include="Connected Services\ProfessionsReference\configuration91.svcinfo" />
-    <None Include="Connected Services\ProfessionsReference\configuration.svcinfo" />
-    <None Include="Connected Services\ProfessionsReference\Reference.svcmap">
+    <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService.disco" />
+    <None Include="Connected Services\ProfessionsServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\ProfessionsServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\ProfessionsServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -223,14 +223,14 @@
     <None Include="Connected Services\PersonsServiceReference\PersonsService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProfessionsReference\ProfessionsService.wsdl" />
-    <None Include="Connected Services\ProfessionsReference\ProfessionsService.xsd">
+    <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService.wsdl" />
+    <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProfessionsReference\ProfessionsService1.xsd">
+    <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProfessionsReference\ProfessionsService2.xsd">
+    <None Include="Connected Services\ProfessionsServiceReference\ProfessionsService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -287,7 +287,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\PersonsServiceReference\" />
-    <WCFMetadataStorage Include="Connected Services\ProfessionsReference\" />
+    <WCFMetadataStorage Include="Connected Services\ProfessionsServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

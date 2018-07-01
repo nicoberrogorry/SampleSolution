@@ -71,7 +71,7 @@
   </wsdl:binding>
   <wsdl:service name="PersonsService">
     <wsdl:port name="BasicHttpBinding_IPersonsService" binding="tns:BasicHttpBinding_IPersonsService">
-      <soap:address location="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc" />
+      <soap:address location="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/PersonsService.svc/SOAP" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -52,7 +52,7 @@
   </wsdl:binding>
   <wsdl:service name="ProfessionsService">
     <wsdl:port name="BasicHttpBinding_IProfessionsService" binding="tns:BasicHttpBinding_IProfessionsService">
-      <soap:address location="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc" />
+      <soap:address location="http://laptop-crivero/FirstSampleSolution.ServiceHost/Administration/ProfessionsService.svc/SOAP" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
