@@ -12,6 +12,6 @@ export * from '../Administration.UI/Professions/Components/professionsPage';
     ]
 })
 
-export class AdministrtionModule{
-
+export class AdministrtionModule
+{
 }

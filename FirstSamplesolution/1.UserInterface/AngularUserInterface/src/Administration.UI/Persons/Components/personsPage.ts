@@ -13,7 +13,10 @@ import {
 })
 
 export class PersonsPage{
+	//	@ViewChild("stepSelector")
+	public currentStep: Number;
+
 	constructor() {
-		
+		this.currentStep = 1;
 	}
 }
