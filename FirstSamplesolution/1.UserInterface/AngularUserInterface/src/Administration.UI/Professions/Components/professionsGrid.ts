@@ -6,9 +6,9 @@ import {
 	Output
 } from '@angular/core';
 @Component({
-	selector: 'professions-Grid',
+	selector: 'professions-grid',
 	templateUrl: './professionsGrid.html',
-	styleUrls: ['.professionsGrid.scss']
+	styleUrls: ['./professionsGrid.scss']
 })
 export class ProfessionsGrid{
 	constructor() {

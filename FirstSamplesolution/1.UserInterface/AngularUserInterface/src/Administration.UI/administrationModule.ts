@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
-import { ProfessionsGrid } from './Professions/Components/professionsGrid';
+import { PersonsPage } from './Persons/Components/personsPage';
+import { ProfessionsPage } from './Professions/Components/professionsPage';
 
-// Components
-export * from '../Administration.UI/Professions/Components/professionsGrid';
+export * from '../Administration.UI/Persons/Components/personsPage';
+export * from '../Administration.UI/Professions/Components/professionsPage';
 
 @NgModule({
-    exports: [ProfessionsGrid]
+    exports: [
+      PersonsPage,
+      ProfessionsPage
+    ]
 })
+
 export class AdministrtionModule{
+
 }

@@ -3,17 +3,17 @@ import {
 	ViewChild,
 	EventEmitter,
 	Input,
+	Output
 } from '@angular/core';
-import { ProfessionsGrid } from './professionsGrid';
 
 @Component({
-	selector: 'professions-Page',
+	selector: 'professions-page',
 	templateUrl: './professionsPage.html',
-	styleUrls: ['.professionsGrid.scss']
+	styleUrls: ['./professionsPage.scss']
 })
+
 export class ProfessionsPage{
 	constructor() {
-	
+		
 	}
-
 }

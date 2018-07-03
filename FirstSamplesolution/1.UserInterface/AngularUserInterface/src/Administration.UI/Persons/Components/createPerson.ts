@@ -7,12 +7,12 @@ import {
 } from '@angular/core';
 
 @Component({
-	selector: 'persons-grid',
-	templateUrl: './personsGrid.html',
-	styleUrls: ['./personsGrid.scss']
+	selector: 'create-person',
+	templateUrl: './createPerson.html',
+	styleUrls: ['./createPerson.scss']
 })
 
-export class PersonsGrid{
+export class CreatePerson{
 	constructor() {
 		
 	}
