@@ -8,7 +8,7 @@ import {
 @Component({
 	selector: 'professions-Grid',
 	templateUrl: './professionsGrid.html',
-	styleUrls: ['./professionsGrid.scss']
+	styleUrls: ['.professionsGrid.scss']
 })
 export class ProfessionsGrid{
 	constructor() {
