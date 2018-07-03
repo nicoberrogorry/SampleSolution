@@ -1,0 +1,20 @@
+nav {
+    background: linear-gradient(rgb(68, 68, 68) 10%, rgb(34, 34, 34));
+    ul {
+        list-style-type: square;
+
+        li {
+            padding-left: 20px;
+            display: inline-block;
+
+            h2 {
+                color: white;
+            }
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
