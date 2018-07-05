@@ -5,9 +5,54 @@
 }
 
 ul {
-    display: inline-table;
-    list-style-type: square;
-    
+    display: block;
+
+    li {
+        height: 100%;
+        padding: 1%;
+        display: inline-block;
+        font-size: 1em;
+        color: white;
+
+        position: relative;
+        div {
+            display: none;
+            position: absolute;
+            background: linear-gradient(rgb(128, 128, 128) 10%, rgb(64, 64, 64));        
+            right: 0%;
+            top: calc(100% - 1px);
+            width: 100%;
+
+            li {
+                padding: 10%;
+                padding-right: 0;
+                width: 90%;
+
+                div {
+                    display: none;
+                    top: 0%;
+                    left: calc(100% - 1px);
+                }
+
+                div:hover {
+                    display: inline-block;
+                }
+            }
+
+            li:hover div:not(:hover) {
+                display: inline-block;
+            }
+        }
+
+        div:hover {
+            display: inline-block;
+        }
+    }
+
+    li:hover div:not(:hover) {
+        display: inline-block;
+    }
+
     li.selected {
         background: linear-gradient(rgb(64, 64, 64) 10%, rgb(128, 128, 128));
     }
@@ -26,13 +71,5 @@ ul {
         -moz-box-shadow: $insetShadow;
         -webkit-box-shadow: $insetShadow;
         box-shadow: $insetShadow;
-    }
-
-    li {
-        height: 100%;
-        padding: 1em;
-        display: table-cell;
-        font-size: 1em;
-        color: white;
     }
 }
