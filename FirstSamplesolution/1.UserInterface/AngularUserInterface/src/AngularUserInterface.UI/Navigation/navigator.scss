@@ -1,0 +1,38 @@
+:host(navigator) {
+    display: inline-block;
+    background: linear-gradient(rgb(128, 128, 128) 10%, rgb(64, 64, 64));
+    width: 100%;
+}
+
+ul {
+    display: inline-table;
+    list-style-type: square;
+    
+    li.selected {
+        background: linear-gradient(rgb(64, 64, 64) 10%, rgb(128, 128, 128));
+    }
+
+    li.separator {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        padding: 0;
+        width: 0.2em;
+        background-color: rgb(64, 64, 64);
+    }
+
+    li:hover:not(.separator):not(.selected) {
+        $insetShadow: inset 0 -1em 1.2em rgb(128, 128, 128);
+        -moz-box-shadow: $insetShadow;
+        -webkit-box-shadow: $insetShadow;
+        box-shadow: $insetShadow;
+    }
+
+    li {
+        height: 100%;
+        padding: 1em;
+        display: table-cell;
+        font-size: 1em;
+        color: white;
+    }
+}

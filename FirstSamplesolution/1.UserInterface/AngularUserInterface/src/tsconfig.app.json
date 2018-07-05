@@ -1,4 +1,5 @@
 {
+  "compileOnSave": true,
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
@@ -8,10 +9,5 @@
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
-  ],
-  "files": [
-    "main.ts",
-    "polyfills.ts",
-    "Administration.UI/administrationModule.ts"
   ]
 }

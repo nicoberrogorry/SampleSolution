@@ -12,8 +12,4 @@ import {
 	styleUrls: ['./personsGrid.scss']
 })
 
-export class PersonsGrid{
-	constructor() {
-		
-	}
-}
+export class PersonsGrid {}

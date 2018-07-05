@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { PersonsPage } from './Persons/Components/personsPage';
 import { ProfessionsPage } from './Professions/Components/professionsPage';
 
-export * from '../Administration.UI/Persons/Components/personsPage';
-export * from '../Administration.UI/Professions/Components/professionsPage';
+export * from './Persons/Components/personsPage';
+export * from './Professions/Components/professionsPage';
 
 @NgModule({
     exports: [
@@ -12,6 +12,4 @@ export * from '../Administration.UI/Professions/Components/professionsPage';
     ]
 })
 
-export class AdministrtionModule
-{
-}
+export class AdministrtionModule{}

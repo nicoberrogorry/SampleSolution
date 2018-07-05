@@ -12,8 +12,4 @@ import {
 	styleUrls: ['./createPerson.scss']
 })
 
-export class CreatePerson{
-	constructor() {
-		
-	}
-}
+export class CreatePerson{}
