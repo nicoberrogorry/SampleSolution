@@ -7,9 +7,9 @@ import {
 } from '@angular/core';
 
 @Component({
-	selector: 'persons-Page',
+	selector: 'persons-page',
 	templateUrl: './personsPage.html',
-	styleUrls: ['.personsPage.scss']
+	styleUrls: ['./personsPage.scss']
 })
 
 export class PersonsPage{

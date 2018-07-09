@@ -12,7 +12,7 @@ import {
 	styleUrls: ['./createProfession.scss']
 })
 
-export class createProfession{
+export class CreateProfession{
 	constructor() {
 		
 	}
