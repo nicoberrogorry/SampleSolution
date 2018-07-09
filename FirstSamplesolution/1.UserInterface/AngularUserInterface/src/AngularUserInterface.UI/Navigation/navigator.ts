@@ -15,7 +15,7 @@ export class Navigator {
       {title: 'First Sample Solution', pages: null },
       {title: 'Administration', pages: [
         {title: 'Persons', items: [
-          {title: 'Persons Grid', destination: 'TODO'},
+          {title: 'Persons Grid', destination: '/administration/Professions'},
           {title: 'Create Person', destination: 'TODO'}
         ]},
         {title: 'Professions', items: [

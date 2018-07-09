@@ -11,7 +11,7 @@
                                 <ul>
                                     <ng-template ngFor let-item [ngForOf]="page.items">
                                         <li>
-                                            <h1>{{item.title}}</h1>
+                                            <a href="{{item.destination}}">{{item.title}}</a>
                                         </li>
                                     </ng-template>
                                 </ul>
