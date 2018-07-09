@@ -6,14 +6,16 @@ import { ProfessionsPage } from './Professions/Components/professionsPage';
 export * from './Professions/Components/professionsPage';
 
 @NgModule({
-    exports: [
-      // PersonsPage,
-      ProfessionsPage
-    ]
-    
+  declarations: [
+    ProfessionsPage
+  ],
+  exports: [
+    // PersonsPage,
+    ProfessionsPage
+  ]
+
 })
 
-export class AdministrtionModule
-{
-  
+export class AdministrtionModule {
+
 }
