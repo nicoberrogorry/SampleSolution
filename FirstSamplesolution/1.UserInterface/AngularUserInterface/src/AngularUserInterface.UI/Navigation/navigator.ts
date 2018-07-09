@@ -15,11 +15,11 @@ export class Navigator {
       {title: 'First Sample Solution', pages: null },
       {title: 'Administration', pages: [
         {title: 'Persons', items: [
-          {title: 'Persons Grid', destination: '/administration/Professions'},
+          {title: 'Persons Grid', destination: ''},
           {title: 'Create Person', destination: 'TODO'}
         ]},
         {title: 'Professions', items: [
-          {title: 'Professions Grid', destination: 'TODO'},
+          {title: 'Professions Grid', destination: '/administration/Professions'},
           {title: 'Create Profession', destination: 'TODO'}
         ]}
       ]}

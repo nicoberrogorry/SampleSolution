@@ -14,8 +14,8 @@ import { ProfessionsProxy } from '../Services/professionsProxy';
 export class ProfessionsGrid{
 	protected _professionsProxy: ProfessionsProxy;
 	
-	constructor(proxy) {
-		this._professionsProxy= new ProfessionsProxy(proxy);
+	constructor() {
+	//	this._professionsProxy= new ProfessionsProxy(proxy);
 	}
 
 }
