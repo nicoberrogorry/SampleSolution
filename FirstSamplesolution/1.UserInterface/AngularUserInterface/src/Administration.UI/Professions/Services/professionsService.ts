@@ -3,9 +3,12 @@ import { Proxy } from '../../../General/Services/Proxy';
 import { GetProfessionsIn } from '../MethodParameters/getProfessionsIn';
 import { GetProfessionsOut } from '../MethodParameters/getProfessionsOut';
 
-@Injectable()
-export class ProfessionsProxy {
+@Injectable(
+	 {providedIn:'root'}
+)
+export class ProfessionsService {
 	protected _proxy: Proxy;
+
 	public get proxy(): Proxy {
 		return this._proxy;
 	}

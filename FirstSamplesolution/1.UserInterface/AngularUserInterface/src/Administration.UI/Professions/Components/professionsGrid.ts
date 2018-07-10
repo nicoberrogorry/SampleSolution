@@ -6,19 +6,20 @@ import {
 	Output
 } from '@angular/core';
 
-import { ProfessionsProxy } from '../Services/professionsProxy';
+import { ProfessionsService } from '../Services/professionsService';
 
 @Component({
 	selector: 'professions-grid',
 	templateUrl: './professionsGrid.html',
-	styleUrls: ['./professionsGrid.scss']
+	styleUrls: ['./professionsGrid.scss'],
+	providers: [ProfessionsService],
 })
 
 export class ProfessionsGrid{
-	protected _professionsProxy: ProfessionsProxy;
+	protected _professionsService: ProfessionsService;
 	
-	constructor() {
-	//	this._professionsProxy= new ProfessionsProxy(proxy);
+	constructor(protected professionsService: ProfessionsService) {
+		this._professionsService=professionsService
 	}
 
 }
