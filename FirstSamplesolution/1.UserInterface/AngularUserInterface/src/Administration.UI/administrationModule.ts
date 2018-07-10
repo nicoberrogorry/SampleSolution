@@ -1,21 +1,27 @@
 import { NgModule } from '@angular/core';
-import { PersonsPage } from './Persons/Components/personsPage';
-import { ProfessionsPage } from './Professions/Components/professionsPage';
+import { PersonsGrid } from './Persons/Components/personsGrid';
+import { CreatePerson } from './Persons/Components/createPerson';
+import { ProfessionsGrid } from './Professions/Components/professionsGrid';
+import { CreateProfession } from './Professions/Components/createProfession';
 
-export * from './Persons/Components/personsPage';
-export * from './Professions/Components/professionsPage';
+export * from './Persons/Components/personsGrid';
+export * from './Persons/Components/createPerson';
+export * from './Professions/Components/professionsGrid';
+export * from './Professions/Components/createProfession';
 
 @NgModule({
   declarations: [
-    PersonsPage,
-    ProfessionsPage
+    PersonsGrid,
+    CreatePerson,
+    ProfessionsGrid,
+    CreateProfession
   ],
   exports: [
-    PersonsPage,
-    ProfessionsPage
+    PersonsGrid,
+    CreatePerson,
+    ProfessionsGrid,
+    CreateProfession
   ]
 })
 
-export class AdministrtionModule {
-
-}
+export class AdministrtionModule {}

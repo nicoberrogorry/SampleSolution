@@ -11,7 +11,10 @@ import { Navigator } from './Navigation/navigator';
 @NgModule({
   declarations: [
     AngularUserInterface,
-    Navigator,
+    WelcomePage,
+    Navigator
+  ],
+  exports:[
     WelcomePage
   ],
   imports: [
