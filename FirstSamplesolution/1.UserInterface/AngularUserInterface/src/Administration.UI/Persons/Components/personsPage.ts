@@ -1,10 +1,4 @@
-import {
-	Component,
-	ViewChild,
-	EventEmitter,
-	Input,
-	Output
-} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
 	selector: 'persons-page',
@@ -12,10 +6,4 @@ import {
 	styleUrls: ['./personsPage.scss']
 })
 
-export class PersonsPage{
-	public currentStep: Number;
-
-	constructor() {
-		this.currentStep = 1;
-	}
-}
+export class PersonsPage{}

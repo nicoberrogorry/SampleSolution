@@ -5,17 +5,19 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { AdministrtionModule } from '../Administration.UI/administrationModule';
 import { AngularUserInterfaceRouting } from './angularUserInterfaceRouting';
 import { AngularUserInterface } from './angularUserInterface';
+import { WelcomePage } from './Extra/welcomePage';
 import { Navigator } from './Navigation/navigator';
 
 @NgModule({
   declarations: [
     AngularUserInterface,
-    Navigator  
+    Navigator,
+    WelcomePage
   ],
   imports: [
     BrowserModule,
     AdministrtionModule,
-    AngularUserInterfaceRouting
+    AngularUserInterfaceRouting,
   ],
   providers: [],
   bootstrap: [AngularUserInterface]
