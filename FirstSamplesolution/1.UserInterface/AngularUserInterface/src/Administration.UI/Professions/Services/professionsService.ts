@@ -1,4 +1,4 @@
-import { Injectable, Type } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { GetProfessionsSummaryResult} from '../Response/GetProfessionsSummaryResult';
 import { GetProfessionsSummaryRequest} from '../Request/GetProfessionsSummaryRequest';
 import { WebConfig, RestClient } from '../../../General/generalModule';
@@ -8,8 +8,7 @@ export class ProfessionsService {
   private serviceUrl: string;
 
 	constructor(private restClient: RestClient, private webConfig: WebConfig) {
-    this.serviceUrl = this.webConfig.AdministrationServicesBaseUrl +
-      this.webConfig.ProfessionsServiceRelativeUrl;
+    this.serviceUrl = this.webConfig.AdministrationServicesBaseUrl + this.webConfig.ProfessionsServiceRelativeUrl;
   }
 
 	getProfessionsSummary(input: GetProfessionsSummaryRequest): GetProfessionsSummaryResult {
