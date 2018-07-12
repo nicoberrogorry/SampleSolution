@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { RestClient } from '../General/generalModule';
+import { GeneralModule } from '../General/generalModule';
 import { AdministrtionModule } from '../Administration.UI/administrationModule';
 import { AngularUserInterfaceRouting } from './angularUserInterfaceRouting';
 import { AngularUserInterface } from './angularUserInterface';
@@ -16,6 +16,7 @@ import { Navigator } from './Navigation/navigator';
   ],
   imports: [
     BrowserModule,
+    GeneralModule,
     AdministrtionModule,
     AngularUserInterfaceRouting,
   ],
