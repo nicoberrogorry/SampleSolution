@@ -9,7 +9,6 @@ export * from './Persons/Components/createPerson';
 export * from './Professions/Components/professionsGrid';
 export * from './Professions/Components/createProfession';
 export * from './Professions/Services/professionsService';
-export * from './../General/Services/Proxy';
 
 @NgModule({
   declarations: [

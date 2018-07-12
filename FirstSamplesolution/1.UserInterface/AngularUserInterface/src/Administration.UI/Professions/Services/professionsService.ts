@@ -1,32 +1,19 @@
 import { Injectable, Type } from '@angular/core';
-import { Proxy } from '../../../General/Services/Proxy';
-import { GetProfessionsIn } from '../MethodParameters/getProfessionsIn';
-import { GetProfessionsOut } from '../MethodParameters/getProfessionsOut';
+import { GetProfessionsSummaryResult} from '../Response/GetProfessionsSummaryResult';
+import { GetProfessionsSummaryRequest} from '../Request/GetProfessionsSummaryRequest';
+import { WebConfig, RestClient } from '../../../General/generalModule';
 
-@Injectable(
-	 {providedIn:'root'}
-)
+@Injectable()
 export class ProfessionsService {
-	protected _proxy: Proxy;
+  private serviceUrl: string;
 
-	public get proxy(): Proxy {
-		return this._proxy;
+	constructor(private restClient: RestClient, private webConfig: WebConfig) {
+    this.serviceUrl = this.webConfig.AdministrationServicesBaseUrl +
+      this.webConfig.ProfessionsServiceRelativeUrl;
+  }
+
+	getProfessionsSummary(input: GetProfessionsSummaryRequest): GetProfessionsSummaryResult {
+		return this.restClient.executePost<GetProfessionsSummaryResult>(this.serviceUrl +
+      "GetProfessionsSummary", input);
 	}
-
-	constructor(proxy: Proxy) {
-		this._proxy = proxy;
-	}
-
-	getProfessions(input: GetProfessionsIn): any {
-		let response = this.proxy.executePost('Administration/LoadProfessionSummaryViewModelList', input).map(this.mapGetProfessionsDataResponse.bind(this));
-		return response;
-	}
-
-	mapGetProfessionsDataResponse(response: any): GetProfessionsOut {
-        let result : GetProfessionsOut;
-        
-        // mapping result
-		return result;
-	}
-
 }

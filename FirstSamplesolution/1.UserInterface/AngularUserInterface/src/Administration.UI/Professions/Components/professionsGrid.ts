@@ -12,14 +12,9 @@ import { ProfessionsService } from '../Services/professionsService';
 	selector: 'professions-grid',
 	templateUrl: './professionsGrid.html',
 	styleUrls: ['./professionsGrid.scss'],
-	providers: [ProfessionsService],
+  providers: [ProfessionsService]
 })
 
 export class ProfessionsGrid{
-	protected _professionsService: ProfessionsService;
-	
-	constructor(protected professionsService: ProfessionsService) {
-		this._professionsService=professionsService
-	}
-
+	constructor(protected professionsService: ProfessionsService) {}
 }
