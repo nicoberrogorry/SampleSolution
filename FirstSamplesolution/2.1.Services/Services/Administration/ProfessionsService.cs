@@ -1,6 +1,8 @@
 ﻿using BusinessComponent.Administration;
 using BusinessEntities;
 using Services.Administration;
+using Services.Requests;
+using Services.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +20,13 @@ namespace Services.Administration
             professionComponent.CreateProfession(profession);
         }
 
-        public List<Profession> GetProfessionsSummary()
+        public GetProfessionsSummaryResponse GetProfessionsSummary(GetProfessionsSummaryRequest request)
         {
-            List<Profession> result = null;
+            GetProfessionsSummaryResponse result = new GetProfessionsSummaryResponse();         
 
             var professionComponent = new ProfessionComponent();
 
-            result = professionComponent.GetProfessionsSummary();
+            result.Professions = professionComponent.GetProfessionsSummary();
 
             return result;
         }

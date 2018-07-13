@@ -11,13 +11,13 @@ namespace BusinessEntities
         public Profession Profession { get; set; }
         [DataMember]
         public string Name { get; set; }
-        [DataMember]
+        [DataMember(EmitDefaultValue = false)]
         public string CellularPhone { get; set; }
-        [DataMember]
+        [DataMember(EmitDefaultValue = false)]
         public string Email { get; set; }
         [DataMember]
         public string LastName { get; set; }
-        [DataMember]
+        [DataMember(EmitDefaultValue = false)]
         public string Address { get; set; }
     }
 }
