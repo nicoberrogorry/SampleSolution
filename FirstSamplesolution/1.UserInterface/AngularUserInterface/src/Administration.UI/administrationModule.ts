@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+
+import { RestClient, WebConfig } from '../General/generalModule';
+
 import { PersonsGrid } from './Persons/Components/personsGrid';
 import { CreatePerson } from './Persons/Components/createPerson';
 import { ProfessionsGrid } from './Professions/Components/professionsGrid';
@@ -22,7 +25,10 @@ export * from './Professions/Services/professionsService';
     CreatePerson,
     ProfessionsGrid,
     CreateProfession
+  ],
+  providers: [
+    RestClient,
+    WebConfig
   ]
 })
-
 export class AdministrtionModule {}
