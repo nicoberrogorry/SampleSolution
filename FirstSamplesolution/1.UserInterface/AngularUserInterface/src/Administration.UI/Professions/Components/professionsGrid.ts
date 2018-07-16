@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { ProfessionsService } from '../Services/professionsService';
 import { GetProfessionsSummaryRequest } from '../Request/GetProfessionsSummaryRequest';
 
-import { ProfessionSummary } from '../Classes/ProfessionSummary';
+import { Profession } from '../Classes/Profession';
 
 @Component({
 	selector: 'professions-grid',
@@ -16,17 +16,20 @@ import { ProfessionSummary } from '../Classes/ProfessionSummary';
 
 export class ProfessionsGrid implements OnInit {
   protected _professionsService: ProfessionsService;
-  protected _professionsSummary: ProfessionSummary[];
+  protected _professionsArray: Profession[];
 
 	constructor(professionsService: ProfessionsService) {
     this._professionsService = professionsService;
   }
 
   ngOnInit(){
-    this._professionsService.getProfessionsSummary(GetProfessionsSummaryRequest).then(result => {
-      this._professionsSummary = result.ProfessionsSummary;
-      console.log("ProfessionsGrid._professionsSummary was asigned to: " + result);
-      console.log("ProfessionsGrid Promise resolved to: " + JSON.stringify(result));
-    });
+    let promise = this._professionsService.getProfessionsSummary(GetProfessionsSummaryRequest).pipe(
+      map(getProfessionsSummaryResponse => getProfessionsSummaryResponse.ProfessionsArray)
+    ).subscribe(
+      professionsArray => {
+        this._professionsArray = professionsArray;
+        console.log("ProfessionsGrid recieved: ", this._professionsArray);
+      }
+    );
   }
 }

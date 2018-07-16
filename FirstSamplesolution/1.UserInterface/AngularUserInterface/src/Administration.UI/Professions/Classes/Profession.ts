@@ -1,4 +1,4 @@
-export class ProfessionSummary {
+export class Profession {
   public ProfessionId: number;
   public Description: string;
 }

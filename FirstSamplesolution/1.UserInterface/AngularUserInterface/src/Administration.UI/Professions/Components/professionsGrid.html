@@ -1,6 +1,8 @@
 <table>
   <td>
     <th> Description </th>
-    <tr *ngFor="let profession of _professionsSummary"> {{profession.Description}} </tr>
+    <tr *ngFor="let profession of _professionsSummary | async">
+      {{profession.Description}}
+    </tr>
   <td>
 </table>

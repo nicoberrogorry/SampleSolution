@@ -4,7 +4,6 @@ import { GetProfessionsSummaryResponse } from '../Response/GetProfessionsSummary
 
 import { WebConfig, RestClient } from '../../../General/generalModule';
 import { Observable } from 'rxjs';
-import { ProfessionSummary } from '../Classes/ProfessionSummary';
 import { map } from 'rxjs/operators';
 
 @Injectable()
@@ -20,28 +19,11 @@ export class ProfessionsService {
       this._webConfig.AdministrationServicesBaseUrl + this._webConfig.ProfessionsServiceRelativeUrl;
   }
 
-	getProfessionsSummary(input: GetProfessionsSummaryRequest): Promise<GetProfessionsSummaryResponse> {
-    let result: Promise<GetProfessionsSummaryResponse>;
-
+	getProfessionsSummary(input: GetProfessionsSummaryRequest): Observable<GetProfessionsSummaryResponse> {
+    let result: Observable<GetProfessionsSummaryResponse>;
     let url = this._serviceUrl + "GetProfessionsSummary";
-    result = this._restClient.executePost(url, input).pipe(
-      map(serverResponse =>{
-        console.log("ProfessionsService Recieved: " + serverResponse);
-        
-        let jsonResponse = JSON.parse(serverResponse);
-        let mappedResponse: GetProfessionsSummaryResponse = <GetProfessionsSummaryResponse>{
-          ProfessionsSummary: []
-        }
-        jsonResponse["GetProfessionsSummaryResult"]["ProfessionsSummary"].forEach( jsonProfessionSummary => {
-          let professionSummary: ProfessionSummary = <ProfessionSummary>{
-            ProfessionId: jsonProfessionSummary["ProfessionId"],
-            Description: jsonProfessionSummary["Description"]
-          }
-          mappedResponse.ProfessionsSummary.push(professionSummary);
-        })
-        return mappedResponse;
-      })
-    ).toPromise();
+    result = this._restClient.executePost<GetProfessionsSummaryResponse>(url, input);
+    result.subscribe( response => console.log("ProfessionsSummary recieved: ", response) );
     return result;
 	}
 }

@@ -1,5 +1,5 @@
-import { ProfessionSummary } from "../Classes/ProfessionSummary";
+import { Profession } from "../Classes/Profession";
 
 export class GetProfessionsSummaryResponse {
-  public ProfessionsSummary: ProfessionSummary[];
+  public ProfessionsArray: Profession[];
 }
