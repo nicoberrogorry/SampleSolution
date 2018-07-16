@@ -12,11 +12,11 @@ namespace Services.Administration
     public interface IPersonsService
     {
         [OperationContract]
-        [WebInvoke(Method = "POST",RequestFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json)]
         void CreatePerson(Person person);
 
         [OperationContract]
-        [WebInvoke( Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json)]
+        [WebInvoke( Method = "POST", RequestFormat = WebMessageFormat.Json)]
         List<Person> FindPersonsSummary(FindPersonsFilter findPersonsFilter);
 
         [OperationContract]

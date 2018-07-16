@@ -26,7 +26,7 @@ namespace Services.Administration
 
             var professionComponent = new ProfessionComponent();
 
-            result.Professions = professionComponent.GetProfessionsSummary();
+            result.ProfessionsArray = professionComponent.GetProfessionsSummary();
 
             return result;
         }

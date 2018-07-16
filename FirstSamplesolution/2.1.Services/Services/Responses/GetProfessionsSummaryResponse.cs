@@ -11,7 +11,6 @@ namespace Services.Responses
     public class GetProfessionsSummaryResponse
     {
         [DataMember]
-        public List<Profession> Professions { get; set; }
+        public List<Profession> ProfessionsArray { get; set; }
     }
-
 }
