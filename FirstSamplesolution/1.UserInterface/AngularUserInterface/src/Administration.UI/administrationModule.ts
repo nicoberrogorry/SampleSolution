@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { RestClient, WebConfig } from '../General/generalModule';
 
@@ -6,6 +6,8 @@ import { PersonsGrid } from './Persons/Components/personsGrid';
 import { CreatePerson } from './Persons/Components/createPerson';
 import { ProfessionsGrid } from './Professions/Components/professionsGrid';
 import { CreateProfession } from './Professions/Components/createProfession';
+import { NgModule } from '@angular/core';
+import { ProfessionsService } from './Professions/Services/professionsService';
 
 export * from './Persons/Components/personsGrid';
 export * from './Persons/Components/createPerson';
@@ -20,6 +22,9 @@ export * from './Professions/Services/professionsService';
     ProfessionsGrid,
     CreateProfession
   ],
+  imports: [
+    CommonModule
+  ],
   exports: [
     PersonsGrid,
     CreatePerson,
@@ -27,8 +32,9 @@ export * from './Professions/Services/professionsService';
     CreateProfession
   ],
   providers: [
-    RestClient,
-    WebConfig
+    WebConfig,
+    RestClient
   ]
 })
+
 export class AdministrtionModule {}
